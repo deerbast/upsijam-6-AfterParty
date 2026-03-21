@@ -2,19 +2,19 @@ class_name MovableObject
 extends CharacterBody2D
 
 # Object constants
-const PICKUP_DISTANCE = 50
+const PICKUP_DISTANCE = 30
 const FLOOR_FRICTION = 3.0
 const IMPACT := 0.7
 
-@export_range(0.1, 1.0, 0.1, "Masse") var masse := 0.1
+@export_range(0.1, 2.0, 0.1, "Masse") var masse := 0.1
 
 var _original_parent : Node
 
-# Called when the node enters the scene tree for the first time.
+@onready var collider = $Collider
+
 func _ready() -> void:
 	_original_parent = get_parent()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	velocity *= 1.0 - FLOOR_FRICTION * delta * masse
 	if move_and_slide():
@@ -37,18 +37,20 @@ func _input(event: InputEvent) -> void:
 	
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if player.grabbed_object == null:
-			var mouse_pos = get_global_mouse_position()
-			# Distance mouse pos to object
-			if global_position.distance_to(mouse_pos) > 5:
-				return
-			var player_distance = global_position.distance_to(player.global_position)
-			if player_distance < PICKUP_DISTANCE:
-				# Grab object here
-				print("take ", self)
-				player.grabbed_object = self
-				reparent(player)
-				set_collision_layer_value(1,false)
-				$Pickup.play(0)
+			# Check click on self
+			var shape = collider.shape as RectangleShape2D
+			var local_mouse = to_local(get_global_mouse_position())				
+			if abs(local_mouse.x) <= shape.extents.x and abs(local_mouse.y) <= shape.extents.y:
+				# Check pickup distance
+				var player_distance = global_position.distance_to(player.global_position)
+				if player_distance < PICKUP_DISTANCE:
+					# Grab object here
+					print("take ", self)
+					player.grabbed_object = self
+					reparent(player)
+					set_collision_layer_value(1,false)
+					$Pickup.play(0)
+					
 		elif player.grabbed_object == self:
 			reparent(_original_parent)
 			set_collision_layer_value(1,true)

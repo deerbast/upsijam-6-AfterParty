@@ -17,7 +17,7 @@ floor_constant_speed = true
 safe_margin = 2.0
 script = ExtResource("1_ay5xa")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1471757483]
+[node name="Collider" type="CollisionShape2D" parent="." unique_id=1471757483]
 shape = SubResource("RectangleShape2D_bvgro")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=234293093]
