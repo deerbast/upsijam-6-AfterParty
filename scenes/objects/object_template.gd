@@ -55,3 +55,12 @@ func _input(event: InputEvent) -> void:
 				player.grabbed_object = self
 				reparent(player)
 				set_collision_layer_value(1,false)
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT:
+		if get_parent() != original_parent:
+			reparent(original_parent)
+			set_collision_layer_value(1,true)
+			# Throw object
+			var mouse_pos = get_global_mouse_position()
+			var angle = global_position.angle_to(mouse_pos)
+			var force_vector = Vector2.from_angle(angle) * 200
+			velocity += force_vector
