@@ -2,11 +2,9 @@
 
 [ext_resource type="Script" uid="uid://breqs1ddljudy" path="res://scenes/Player/player.gd" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://d2e2d3x48kes6" path="res://scenes/Player/timer.gd" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://d015wfxmeroxv" path="res://assets/asset.png" id="2_gqjuk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sh265"]
-size = Vector2(14, 14)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4flbx"]
 size = Vector2(14, 14)
 
 [node name="Player" type="Node2D" unique_id=2085354336]
@@ -21,7 +19,9 @@ shape = SubResource("RectangleShape2D_sh265")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=428360958]
 texture_filter = 2
-texture = SubResource("PlaceholderTexture2D_4flbx")
+position = Vector2(-4.7683716e-07, -9.536743e-07)
+scale = Vector2(0.040935677, 0.027722776)
+texture = ExtResource("2_gqjuk")
 
 [node name="Timer" type="Timer" parent="Player" unique_id=174517216]
 script = ExtResource("2_g2els")
