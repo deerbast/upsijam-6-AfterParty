@@ -6,17 +6,21 @@ const DROP_FORCE = 100
 const FLOOR_FRICTION = 3.0
 const IMPACT := 0.7
 
+var _original_parent: Node
+var _grabbed_by: CharacterBody2D = null # Player grabbing the object
+var _pickup_distance = 30
+var _pickup_height = 10
+
 @export var texture: Texture2D:
 	set(value):
 		texture = value
 		if has_node("Sprite2D"):
 			$Sprite2D.texture = value
+			_pickup_height = $Sprite2D.texture.get_width()
+			_pickup_distance = $Sprite2D.texture.get_width() * 1.8
+			print("Set pickup distance of ", _pickup_distance, "for tex ", $Sprite2D.texture)
 			
 @export_range(0.1, 2.0, 0.1, "Masse") var masse := 0.1
-@export_range(20, 60, 1, "Pickup Distance") var pickup_distance = 30
-
-var _original_parent: Node
-var _grabbed_by: CharacterBody2D = null # Player grabbing the object
 
 @onready var collider = $Collider
 
@@ -57,7 +61,7 @@ func player_grab_me(player: CharacterBody2D):
 	player.add_collision_exception_with(self)
 	# Move object on top of grabber
 	velocity = Vector2.ZERO
-	create_tween().tween_property(self, "position", Vector2(0, -16), 0.1)
+	create_tween().tween_property(self, "position", Vector2(0, -_pickup_height), 0.1)
 	
 func player_drop_me(player: CharacterBody2D):
 	# Remove from grabber
@@ -88,7 +92,7 @@ func _input(event: InputEvent) -> void:
 		if abs(local_mouse.x) <= shape.extents.x and abs(local_mouse.y) <= shape.extents.y:
 			# Check pickup distance
 			var player_distance = global_position.distance_to(player.global_position)
-			if player_distance < pickup_distance:
+			if player_distance < _pickup_distance:
 				player_grab_me(player)
 				$Pickup.play(0)
 				
