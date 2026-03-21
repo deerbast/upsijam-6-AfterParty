@@ -6,7 +6,7 @@ var old_mouse_pos : Vector2 = Vector2.ZERO
 var SPEED = 200
 var PICKUP_DISTANCE = 50
 
-var original_parent : Node2D
+var original_parent : Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

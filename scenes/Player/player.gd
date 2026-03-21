@@ -7,6 +7,9 @@ var TIMER = 0.25
 
 signal dash_signal
 
+func _process(delta: float) -> void:
+	look_at(get_global_mouse_position())
+
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = direction * speed

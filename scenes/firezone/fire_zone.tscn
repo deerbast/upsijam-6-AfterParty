@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cf21mrb64cp20"]
 
-[ext_resource type="Script" uid="uid://gx7l1ryxvu3u" path="res://scripts/fire_zone.gd" id="1_t5u7e"]
+[ext_resource type="Script" uid="uid://gx7l1ryxvu3u" path="res://scenes/firezone/fire_zone.gd" id="1_t5u7e"]
 
 [node name="FireZone" type="Area2D" unique_id=39517027]
 collision_mask = 2
