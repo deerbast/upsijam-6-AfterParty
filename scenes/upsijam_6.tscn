@@ -58,12 +58,12 @@ masse = 0.5
 [node name="Pizza1" parent="objects" unique_id=372562865 instance=ExtResource("5_o4ivr")]
 position = Vector2(389, 309)
 texture = ExtResource("8_l8yqd")
-masse = 1.5
-pickup_distance = 50
+masse = 2.0
 
 [node name="Bottle2" parent="objects" unique_id=486303983 instance=ExtResource("3_0bmqc")]
 position = Vector2(376, 346)
 texture = ExtResource("6_0q7t8")
+masse = 0.5
 
 [node name="Player" parent="." unique_id=2085354336 instance=ExtResource("2_qi026")]
 position = Vector2(322, 267)

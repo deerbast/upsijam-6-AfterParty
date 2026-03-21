@@ -3,8 +3,8 @@ extends CharacterBody2D
 
 # Object constants
 const DROP_FORCE = 100
-const FLOOR_FRICTION = 3.0
-const IMPACT := 0.7
+const FLOOR_FRICTION = 200.0
+const IMPACT := 0.5
 
 var _original_parent: Node
 var _grabbed_by: CharacterBody2D = null # Player grabbing the object
@@ -28,7 +28,7 @@ func _ready() -> void:
 	_original_parent = get_parent()
 
 func _physics_process(delta: float) -> void:
-	velocity *= 1.0 - FLOOR_FRICTION * delta * masse
+	velocity = velocity.move_toward(Vector2.ZERO, FLOOR_FRICTION * delta * masse)
 	if move_and_slide():
 		resolve_collisions()
 	
