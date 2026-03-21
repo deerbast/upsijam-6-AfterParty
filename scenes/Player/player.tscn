@@ -26,6 +26,5 @@ texture = SubResource("PlaceholderTexture2D_4flbx")
 [node name="Timer" type="Timer" parent="Player" unique_id=174517216]
 script = ExtResource("2_g2els")
 
-[connection signal="dash_signal" from="Player" to="Player" method="_on_dash_signal"]
 [connection signal="dash_signal" from="Player" to="Player/Timer" method="_on_player_dash_signal"]
 [connection signal="timeout" from="Player/Timer" to="Player" method="_on_timer_timeout"]
