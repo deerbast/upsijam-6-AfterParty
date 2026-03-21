@@ -15,8 +15,7 @@ var grabbed_object: MovableObject = null
 @onready var sprite = $AnimatedSprite2D
 @onready var dash = $DashTimer 
 
-func _physics_process(delta: float) -> void:
-	speed = SPEED_DASH if dashing else SPEED_RUN
+func _physics_process(_delta: float) -> void:
 	var direction := Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = direction * speed * _speed_modifier()
 	if move_and_slide(): resolve_collisions()
@@ -48,10 +47,12 @@ func _update_animation():
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.is_action_pressed("Dash") and dash.can_dash:
 		dashing = true
+		speed = SPEED_DASH
 		dash.dash()
 
 func _on_dash_finished() -> void:
 	dashing = false
+	speed = SPEED_RUN
 
 # Apply force onto object
 func resolve_collisions() -> void:
@@ -60,3 +61,10 @@ func resolve_collisions() -> void:
 		var body := collision.get_collider() as MovableObject
 		if body:
 			body.apply_impact(velocity)
+			
+func blocked(time: float) -> void:
+	speed = 0
+	$BlockTimer.start(time)
+
+func _on_block_timer_timeout() -> void:
+	speed = SPEED_RUN

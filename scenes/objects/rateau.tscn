@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://ccb56340cgjvs"]
 
+[ext_resource type="Script" uid="uid://dcbqmlvnlkgjp" path="res://scenes/objects/rateau.gd" id="1_lnf81"]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_uswfk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uswfk"]
@@ -13,11 +15,17 @@ font_size = 5
 
 [node name="Rateau" type="StaticBody2D" unique_id=1023904740 groups=["Enemy"]]
 collision_layer = 0
+script = ExtResource("1_lnf81")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=331818679]
 sprite_frames = SubResource("SpriteFrames_uswfk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1586752399]
+shape = SubResource("RectangleShape2D_uswfk")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1211963819]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1683787596]
 shape = SubResource("RectangleShape2D_uswfk")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1637216682]
@@ -31,3 +39,7 @@ offset_bottom = 4.0
 text = "R"
 label_settings = SubResource("LabelSettings_uswfk")
 horizontal_alignment = 1
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
