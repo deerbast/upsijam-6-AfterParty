@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://caww301l0tlxy" path="res://assets/temporary/sprites/16x32 Walk-Sheet.png" id="4_p47bc"]
 [ext_resource type="AudioStream" uid="uid://c8iwxdmmb25i1" path="res://assets/walking.mp3" id="7_0owmy"]
 [ext_resource type="AudioStream" uid="uid://wn0u4c6wo7d1" path="res://assets/dash.mp3" id="7_qek5x"]
+[ext_resource type="Texture2D" uid="uid://cedhp1f8eeppr" path="res://assets/temporary/sprites/slime_green.png" id="6_0owmy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yj68g"]
 atlas = ExtResource("3_p47bc")
@@ -84,6 +85,10 @@ region = Rect2(32, 0, 16, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_5gtgg"]
 atlas = ExtResource("3_lvxji")
 region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7obkq"]
+atlas = ExtResource("6_0owmy")
+region = Rect2(0, 48, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h17s1"]
 atlas = ExtResource("4_p47bc")
@@ -241,6 +246,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_7obkq")
+}],
+"loop": true,
+"name": &"idle-obj",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_h17s1")
 }, {
 "duration": 1.0,
@@ -333,6 +346,7 @@ animation = &"idle"
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1431942185]
 position = Vector2(0, 12.5)
 shape = SubResource("RectangleShape2D_sh265")
+animation = &"idle-obj"
 
 [node name="BlockTimer" type="Timer" parent="." unique_id=783402733]
 

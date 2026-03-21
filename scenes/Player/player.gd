@@ -73,3 +73,4 @@ func blocked(time: float) -> void:
 
 func _on_block_timer_timeout() -> void:
 	speed = SPEED_RUN
+	
