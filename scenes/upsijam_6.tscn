@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1wpporgwdgrp" path="res://scenes/upsijam_6.gd" id="1_8plsc"]
 [ext_resource type="TileSet" uid="uid://cokrdia41n06l" path="res://assets/brownies_tile_set.tres" id="2_hebbi"]
-[ext_resource type="PackedScene" uid="uid://dxtkea2pyjqqi" path="res://scenes/Player/player.tscn" id="2_qi026"]
+[ext_resource type="PackedScene" uid="uid://dxtkea2pyjqqi" path="res://scenes/player/player.tscn" id="2_qi026"]
 [ext_resource type="PackedScene" uid="uid://jbiuyoklkws2" path="res://scenes/objects/object_template.tscn" id="3_0bmqc"]
 [ext_resource type="PackedScene" uid="uid://cf21mrb64cp20" path="res://scenes/firezone/fire_zone.tscn" id="4_0bmqc"]
 [ext_resource type="PackedScene" uid="uid://ccb56340cgjvs" path="res://scenes/objects/rateau.tscn" id="5_hebbi"]
@@ -24,6 +24,7 @@ tile_map_data = PackedByteArray("AAAPAAsAAQAGAAEAAAAQAAsAAQAAAAEAAAARAAsAAQAAAAE
 tile_set = ExtResource("2_hebbi")
 
 [node name="FireZone" parent="map" unique_id=39517027 instance=ExtResource("4_0bmqc")]
+position = Vector2(695, 147)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="map/FireZone" unique_id=50742738]
 position = Vector2(80, 176)
@@ -32,25 +33,31 @@ shape = SubResource("RectangleShape2D_0bmqc")
 [node name="objects" type="Node" parent="." unique_id=418337554]
 
 [node name="Object3" parent="objects" unique_id=258080054 instance=ExtResource("3_0bmqc")]
-position = Vector2(200, 72)
+position = Vector2(414, 316)
 masse = 2.0
 
 [node name="Object4" parent="objects" unique_id=2145525878 instance=ExtResource("3_0bmqc")]
-position = Vector2(146, 120)
+position = Vector2(360, 364)
 masse = 1.0
 
 [node name="Object2" parent="objects" unique_id=1522713879 instance=ExtResource("3_0bmqc")]
-position = Vector2(157, 72)
+position = Vector2(371, 316)
 
 [node name="Object1" parent="objects" unique_id=860046464 instance=ExtResource("3_0bmqc")]
-position = Vector2(188, 120)
+position = Vector2(402, 364)
 
-[node name="Rateau" parent="objects" unique_id=1023904740 instance=ExtResource("5_hebbi")]
-position = Vector2(191, 94)
+[node name="Rateau2" parent="objects" unique_id=1023904740 instance=ExtResource("5_hebbi")]
+position = Vector2(454, 435)
+
+[node name="Rateau3" parent="objects" unique_id=1462088577 instance=ExtResource("5_hebbi")]
+position = Vector2(569, 338)
+
+[node name="Rateau" parent="objects" unique_id=2074256559 instance=ExtResource("5_hebbi")]
+position = Vector2(396, 264)
 
 [node name="Player" parent="." unique_id=2085354336 instance=ExtResource("2_qi026")]
 z_index = 5
-position = Vector2(92, 81)
+position = Vector2(322, 267)
 
 [node name="Camera" type="Camera2D" parent="Player" unique_id=456315949]
 zoom = Vector2(3, 3)
