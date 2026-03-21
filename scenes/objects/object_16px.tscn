@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://b825ci55st2uu" path="res://scenes/objects/object.gd" id="1_ay5xa"]
 [ext_resource type="AudioStream" uid="uid://b7tjd5dobtfwv" path="res://assets/pick up.mp3" id="2_ki0kp"]
 [ext_resource type="AudioStream" uid="uid://cp02bc0hy7pyu" path="res://assets/throw.mp3" id="3_41hww"]
-[ext_resource type="Texture2D" uid="uid://cigrlkcg0ou4v" path="res://assets/bottle_sprite.png" id="2_kd0ia"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bvgro"]
 size = Vector2(16, 16)
@@ -19,17 +18,6 @@ shape = SubResource("RectangleShape2D_bvgro")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=234293093]
 z_index = 2
-texture = ExtResource("2_kd0ia")
-
-[node name="Label" type="Label" parent="Sprite2D" unique_id=516878529]
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 4.0
-offset_bottom = 5.0
-text = "O"
-label_settings = SubResource("LabelSettings_d2yhh")
-horizontal_alignment = 1
-vertical_alignment = 3
 
 [node name="Pickup" type="AudioStreamPlayer" parent="." unique_id=624169544]
 stream = ExtResource("2_ki0kp")

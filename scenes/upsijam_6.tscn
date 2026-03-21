@@ -6,12 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://jbiuyoklkws2" path="res://scenes/objects/object_16px.tscn" id="3_0bmqc"]
 [ext_resource type="PackedScene" uid="uid://cf21mrb64cp20" path="res://scenes/firezone/fire_zone.tscn" id="4_0bmqc"]
 [ext_resource type="PackedScene" uid="uid://ccb56340cgjvs" path="res://scenes/objects/rateau.tscn" id="5_hebbi"]
-[ext_resource type="Texture2D" uid="uid://cxyvclt411l26" path="res://assets/mouse.png" id="7_o4ivr"]
-[ext_resource type="Texture2D" uid="uid://cigrlkcg0ou4v" path="res://assets/bottle_sprite.png" id="8_xyyut"]
-[ext_resource type="AudioStream" uid="uid://x08jyisol8of" path="res://assets/game_upsijam6.2_1.mp3" id="9_0q7t8"]
 [ext_resource type="PackedScene" uid="uid://fplijkr6kab2" path="res://scenes/objects/object_32px.tscn" id="5_o4ivr"]
 [ext_resource type="Texture2D" uid="uid://cigrlkcg0ou4v" path="res://assets/bottle_sprite.png" id="6_0q7t8"]
+[ext_resource type="Texture2D" uid="uid://cxyvclt411l26" path="res://assets/mouse.png" id="7_o4ivr"]
 [ext_resource type="Texture2D" uid="uid://cklxadwk0tesr" path="res://assets/pizza_sprite.png" id="8_l8yqd"]
+[ext_resource type="AudioStream" uid="uid://x08jyisol8of" path="res://assets/game_upsijam6.2_1.mp3" id="9_0q7t8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bmqc"]
 size = Vector2(32, 32)
@@ -131,7 +130,7 @@ offset_left = 130.0
 offset_top = 273.0
 offset_right = 146.0
 offset_bottom = 289.0
-texture = ExtResource("8_xyyut")
+texture = ExtResource("6_0q7t8")
 
 [node name="Label6" type="Label" parent="Tuto" unique_id=1086088230]
 offset_left = 136.0
