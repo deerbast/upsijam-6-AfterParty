@@ -275,7 +275,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 6.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -292,7 +292,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle-obj",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -315,7 +315,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run-front",
-"speed": 6.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -338,7 +338,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run-front-obj",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -361,7 +361,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run-rear",
-"speed": 6.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -384,7 +384,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run-rear-obj",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -407,7 +407,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run-right",
-"speed": 6.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -430,14 +430,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"run-right-obj",
-"speed": 5.0
+"speed": 12.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sh265"]
 size = Vector2(10, 7)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0owmy"]
-size = Vector2(16, 25)
+size = Vector2(16, 28)
 
 [node name="Player" type="CharacterBody2D" unique_id=783921897 groups=["Player"]]
 z_index = 5
@@ -450,7 +450,7 @@ script = ExtResource("2_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1006457628]
 sprite_frames = SubResource("SpriteFrames_yj68g")
-animation = &"dash-right-obj"
+animation = &"run-right-obj"
 
 [node name="BlockTimer" type="Timer" parent="." unique_id=783402733]
 
@@ -461,7 +461,7 @@ shape = SubResource("RectangleShape2D_sh265")
 [node name="OverlapArea" type="Area2D" parent="." unique_id=877828549]
 
 [node name="OverlapShape" type="CollisionShape2D" parent="OverlapArea" unique_id=617768326]
-position = Vector2(0, 3.5)
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_0owmy")
 
 [node name="Dash" type="AudioStreamPlayer" parent="." unique_id=98758452]

@@ -13,7 +13,8 @@ var grabbed_object: MovableObject = null
 
 # External refs
 @onready var sprite = $AnimatedSprite2D
-@onready var dash = $DashTimer 
+@onready var dash = $DashTimer
+@onready var sprites = $AnimatedSprite2D
 
 func _physics_process(_delta: float) -> void:
 	var direction := Input.get_vector("Left", "Right", "Up", "Down")
@@ -35,8 +36,10 @@ func _update_animation():
 	if velo.length() < (SPEED_RUN * 0.1):
 		# No movement
 		sprite.play("idle"+suffix)
+		sprites.speed_scale = 1.0
 		$Walking.stop()
 	else:
+		sprites.speed_scale = velocity.length() / SPEED_RUN
 		if !$Walking.playing:
 			$Walking.play(0)
 		if abs(velo.x) > abs(velo.y):
