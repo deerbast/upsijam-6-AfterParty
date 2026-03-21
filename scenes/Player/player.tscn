@@ -331,8 +331,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sh265"]
 size = Vector2(10, 7)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0owmy"]
+size = Vector2(16, 25)
+
 [node name="Player" type="CharacterBody2D" unique_id=783921897 groups=["Player"]]
-z_index = 1
+z_index = 5
 motion_mode = 1
 floor_constant_speed = true
 script = ExtResource("1_4flbx")
@@ -344,12 +347,17 @@ script = ExtResource("2_g2els")
 sprite_frames = SubResource("SpriteFrames_yj68g")
 animation = &"idle"
 
+[node name="BlockTimer" type="Timer" parent="." unique_id=783402733]
+
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1431942185]
 position = Vector2(0, 12.5)
 shape = SubResource("RectangleShape2D_sh265")
-animation = &"idle-obj"
 
-[node name="BlockTimer" type="Timer" parent="." unique_id=783402733]
+[node name="OverlapArea" type="Area2D" parent="." unique_id=877828549]
+
+[node name="OverlapShape" type="CollisionShape2D" parent="OverlapArea" unique_id=617768326]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_0owmy")
 
 [node name="Dash" type="AudioStreamPlayer" parent="." unique_id=98758452]
 stream = ExtResource("7_qek5x")

@@ -39,25 +39,6 @@ shape = SubResource("RectangleShape2D_0bmqc")
 
 [node name="objects" type="Node" parent="." unique_id=418337554]
 
-[node name="Object3" parent="objects" unique_id=258080054 instance=ExtResource("3_0bmqc")]
-position = Vector2(414, 316)
-masse = 2.0
-
-[node name="Object4" parent="objects" unique_id=2145525878 instance=ExtResource("3_0bmqc")]
-position = Vector2(360, 364)
-masse = 1.0
-
-[node name="Object2" parent="objects" unique_id=1522713879 instance=ExtResource("3_0bmqc")]
-position = Vector2(371, 316)
-
-[node name="Object1" parent="objects" unique_id=860046464 instance=ExtResource("3_0bmqc")]
-position = Vector2(402, 364)
-
-[node name="Object5" parent="objects" unique_id=792598255 instance=ExtResource("5_o4ivr")]
-position = Vector2(467, 319)
-masse = 2.0
-pickup_distance = 50
-
 [node name="Rateau2" parent="objects" unique_id=1023904740 instance=ExtResource("5_hebbi")]
 position = Vector2(454, 435)
 
@@ -66,6 +47,14 @@ position = Vector2(569, 338)
 
 [node name="Rateau" parent="objects" unique_id=2074256559 instance=ExtResource("5_hebbi")]
 position = Vector2(396, 264)
+
+[node name="Object16px" parent="objects" unique_id=2145525878 instance=ExtResource("3_0bmqc")]
+position = Vector2(342, 335)
+masse = 1.5
+
+[node name="Object32px" parent="objects" unique_id=372562865 instance=ExtResource("5_o4ivr")]
+position = Vector2(394, 298)
+masse = 2.0
 
 [node name="Player" parent="." unique_id=2085354336 instance=ExtResource("2_qi026")]
 position = Vector2(322, 267)

@@ -10,7 +10,6 @@ size = Vector2(16, 16)
 font_size = 6
 
 [node name="Object32px" type="CharacterBody2D" unique_id=2145525878]
-z_index = 2
 motion_mode = 1
 floor_constant_speed = true
 safe_margin = 2.0
