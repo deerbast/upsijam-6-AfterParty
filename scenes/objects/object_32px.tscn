@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://fplijkr6kab2"]
 
 [ext_resource type="Script" uid="uid://b825ci55st2uu" path="res://scenes/objects/object.gd" id="1_slina"]
-[ext_resource type="Texture2D" uid="uid://d015wfxmeroxv" path="res://assets/asset.png" id="2_5eo8b"]
+[ext_resource type="Texture2D" uid="uid://cklxadwk0tesr" path="res://assets/pizza_sprite.png" id="2_slina"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bvgro"]
 size = Vector2(16, 16)
@@ -21,8 +21,7 @@ shape = SubResource("RectangleShape2D_bvgro")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=234293093]
 position = Vector2(1.9073486e-06, 0)
-scale = Vector2(0.09356722, 0.06336633)
-texture = ExtResource("2_5eo8b")
+texture = ExtResource("2_slina")
 
 [node name="Label" type="Label" parent="Sprite2D" unique_id=516878529]
 offset_left = -4.0
