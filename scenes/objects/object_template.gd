@@ -47,6 +47,7 @@ func _input(event: InputEvent) -> void:
 				player.grabbed_object = self
 				reparent(player)
 				set_collision_layer_value(1,false)
+				$Pickup.play(0)
 		elif player.grabbed_object == self:
 			reparent(original_parent)
 			set_collision_layer_value(1,true)
@@ -54,3 +55,4 @@ func _input(event: InputEvent) -> void:
 			# Throw object
 			var mouse_pos = get_global_mouse_position()
 			velocity += global_position.direction_to(mouse_pos) * 200
+			$Throw.play(0)

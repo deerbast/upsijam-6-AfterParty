@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://jbiuyoklkws2"]
 
 [ext_resource type="Script" uid="uid://b825ci55st2uu" path="res://scenes/objects/object_template.gd" id="1_ay5xa"]
+[ext_resource type="AudioStream" uid="uid://b7tjd5dobtfwv" path="res://assets/pick up.mp3" id="2_ki0kp"]
+[ext_resource type="AudioStream" uid="uid://cp02bc0hy7pyu" path="res://assets/throw.mp3" id="3_41hww"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bvgro"]
 size = Vector2(8, 8)
@@ -38,3 +40,11 @@ text = "O"
 label_settings = SubResource("LabelSettings_d2yhh")
 horizontal_alignment = 1
 vertical_alignment = 3
+
+[node name="Pickup" type="AudioStreamPlayer" parent="." unique_id=624169544]
+stream = ExtResource("2_ki0kp")
+volume_db = 9.0
+
+[node name="Throw" type="AudioStreamPlayer" parent="." unique_id=429084249]
+stream = ExtResource("3_41hww")
+volume_db = 9.0
