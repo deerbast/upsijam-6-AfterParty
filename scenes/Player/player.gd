@@ -1,18 +1,23 @@
 extends CharacterBody2D
 
 signal player_moved
+signal dash_signal
 
-var speed = 60
-var NORMAL_SPEED = 60
-var tDASH = 0.25 #Timer
-var tENEMY = 2 #Rateau
+var speed = 100
+var dashing: bool = false
+var TIMER = 0.25
 
 var grabbed_object: MovableObject = null
 
-signal dash_signal
+@onready var sprite = $AnimatedSprite2D
 
-func _process(delta: float) -> void:
-	look_at(get_global_mouse_position())
+func _physics_process(delta: float) -> void:
+	var direction := Input.get_vector("Left", "Right", "Up", "Down")
+	velocity = direction * speed * speed_modifier()
+	if move_and_slide():
+		resolve_collisions()
+	_update_animation()
+	emit_signal("player_moved")
 	
 func speed_modifier() -> float:
 	if grabbed_object != null:
@@ -20,20 +25,35 @@ func speed_modifier() -> float:
 	else:
 		return 1
 
-func _physics_process(delta: float) -> void:
-	var direction := Input.get_vector("Left", "Right", "Up", "Down")
-	velocity = direction * speed * speed_modifier()
-	if move_and_slide():
-		resolve_collisions()
-	emit_signal("player_moved")
+func _process(delta: float) -> void:
+	pass
+	
+func _update_animation():
+	var velo = velocity
+	var prefix = "dash-" if dashing else "run-"
+	var suffix = "" if grabbed_object == null else "-obj"
+
+	if velo.length() < 10:
+		# No movement
+		sprite.play("idle"+suffix)
+	elif abs(velo.x) > abs(velo.y):
+		# Horizontal movement
+		sprite.play(prefix+"right"+suffix)
+		sprite.flip_h = velo.x < 0
+	else:
+		# Vertical movement
+		var dir = "front" if velo.y > 0 else "rear"
+		sprite.play(prefix+dir+suffix)
 	
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.is_action_pressed("Dash"):
-		speed = NORMAL_SPEED * 4
-		$Timer.start(tDASH)
+		speed = 240
+		dashing = true
+		dash_signal.emit(TIMER)
 
 func _on_timer_timeout() -> void:
-	speed = NORMAL_SPEED
+	speed = 60
+	dashing = false
 
 #Apply force onto object
 func resolve_collisions() -> void:
@@ -42,8 +62,3 @@ func resolve_collisions() -> void:
 		var body := collision.get_collider() as MovableObject
 		if body:
 			body.apply_impact(velocity)
-
-func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if viewport.is_in_group("Enemy"):
-		$Timer.start(tENEMY)
-		speed = NORMAL_SPEED/2
