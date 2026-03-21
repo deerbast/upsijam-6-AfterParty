@@ -7,24 +7,22 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sh265"]
 size = Vector2(14, 14)
 
-[node name="Player" type="Node2D" unique_id=2085354336]
-
-[node name="Player" type="CharacterBody2D" parent="." unique_id=783921897]
+[node name="Player" type="CharacterBody2D" unique_id=783921897]
 motion_mode = 1
 floor_constant_speed = true
 script = ExtResource("1_4flbx")
 
-[node name="Collision" type="CollisionShape2D" parent="Player" unique_id=1431942185]
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1431942185]
 shape = SubResource("RectangleShape2D_sh265")
 
-[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=428360958]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=428360958]
 texture_filter = 2
 position = Vector2(-4.7683716e-07, -9.536743e-07)
 scale = Vector2(0.040935677, 0.027722776)
 texture = ExtResource("2_gqjuk")
 
-[node name="Timer" type="Timer" parent="Player" unique_id=174517216]
+[node name="Timer" type="Timer" parent="." unique_id=174517216]
 script = ExtResource("2_g2els")
 
-[connection signal="dash_signal" from="Player" to="Player/Timer" method="_on_player_dash_signal"]
-[connection signal="timeout" from="Player/Timer" to="Player" method="_on_timer_timeout"]
+[connection signal="dash_signal" from="." to="Timer" method="_on_player_dash_signal"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

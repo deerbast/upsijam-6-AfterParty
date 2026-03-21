@@ -34,10 +34,7 @@ func resolve_collisions() -> void:
 
 func _input(event: InputEvent) -> void:
 	if !event.is_pressed(): return
-	
-	var players = get_tree().get_first_node_in_group("Player").get_children()
-	assert(players.size() > 0)
-	var player = players[0]
+	var player = get_tree().get_first_node_in_group("Player")
 	
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if player.grabbed_object == self:
