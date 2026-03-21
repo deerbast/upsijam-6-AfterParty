@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://ccb56340cgjvs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uswfk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uswfk"]
+size = Vector2(8, 8)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lnf81"]
+size = Vector2(8, 8)
+
+[sub_resource type="LabelSettings" id="LabelSettings_uswfk"]
+font_size = 5
+
+[node name="Rateau" type="StaticBody2D" unique_id=1023904740 groups=["Enemy"]]
+collision_layer = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=331818679]
+sprite_frames = SubResource("SpriteFrames_uswfk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1586752399]
+shape = SubResource("RectangleShape2D_uswfk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1637216682]
+texture = SubResource("PlaceholderTexture2D_lnf81")
+
+[node name="Label" type="Label" parent="Sprite2D" unique_id=1193606027]
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+text = "R"
+label_settings = SubResource("LabelSettings_uswfk")
+horizontal_alignment = 1

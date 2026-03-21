@@ -8,12 +8,14 @@ var SPEED = 200
 var PICKUP_DISTANCE = 50
 var FROTEMENT_SOL = 1.5
 var IMPACT := 0.7
+@export_range(0,2,1, "Masse") var masse := 0.0
 
 var original_parent : Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	original_parent = get_parent()
+	scale = Vector2(1 + masse, 1 + masse)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
