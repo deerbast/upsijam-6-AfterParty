@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://dxtkea2pyjqqi" path="res://scenes/Player/player.tscn" id="2_qi026"]
 [ext_resource type="PackedScene" uid="uid://jbiuyoklkws2" path="res://scenes/objects/object_template.tscn" id="3_0bmqc"]
 [ext_resource type="PackedScene" uid="uid://cf21mrb64cp20" path="res://scenes/firezone/fire_zone.tscn" id="4_0bmqc"]
+[ext_resource type="PackedScene" uid="uid://ccb56340cgjvs" path="res://scenes/objects/rateau.tscn" id="5_hebbi"]
+[ext_resource type="PackedScene" uid="uid://cjcemuwnbkley" path="res://scenes/interface.tscn" id="7_o4ivr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ncu3o"]
 texture = ExtResource("1_kbrdn")
@@ -56,9 +58,11 @@ shape = SubResource("RectangleShape2D_0bmqc")
 
 [node name="Object3" parent="objects" unique_id=258080054 instance=ExtResource("3_0bmqc")]
 position = Vector2(200, 72)
+masse = 2.0
 
 [node name="Object4" parent="objects" unique_id=2145525878 instance=ExtResource("3_0bmqc")]
 position = Vector2(146, 120)
+masse = 1.0
 
 [node name="Object2" parent="objects" unique_id=1522713879 instance=ExtResource("3_0bmqc")]
 position = Vector2(157, 72)
@@ -66,6 +70,12 @@ position = Vector2(157, 72)
 [node name="Object1" parent="objects" unique_id=860046464 instance=ExtResource("3_0bmqc")]
 position = Vector2(188, 120)
 
-[node name="Player" parent="." unique_id=2085354336 groups=["Player"] instance=ExtResource("2_qi026")]
+[node name="Rateau" parent="objects" unique_id=1023904740 instance=ExtResource("5_hebbi")]
+position = Vector2(191, 94)
+
+[node name="Player" parent="." unique_id=2085354336 instance=ExtResource("2_qi026")]
 z_index = 5
 position = Vector2(92, 81)
+
+[node name="Control" parent="." unique_id=1468443770 instance=ExtResource("7_o4ivr")]
+z_index = 10

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cjcemuwnbkley"]
+
+[ext_resource type="Script" uid="uid://depq7ybofgohw" path="res://scenes/interface.gd" id="1_tg63u"]
+
+[node name="Control" type="Control" unique_id=1468443770]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tg63u")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=408926915]
+layout_mode = 0
+offset_left = 112.0
+offset_right = 256.0
+offset_bottom = 27.0
+max_value = 10.0
+
+[node name="Label" type="Label" parent="ProgressBar" unique_id=1543775222]
+layout_mode = 0
+offset_left = -56.0
+offset_right = -12.0
+offset_bottom = 23.0
+text = "Dash:"
