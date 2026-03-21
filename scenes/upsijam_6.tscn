@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://kxrelo32eud6"]
 
+[ext_resource type="Script" uid="uid://c1wpporgwdgrp" path="res://scenes/upsijam_6.gd" id="1_8plsc"]
 [ext_resource type="Texture2D" uid="uid://bj5u8vx13064g" path="res://assets/temporary/sprites/world_tileset.png" id="1_kbrdn"]
 [ext_resource type="PackedScene" uid="uid://dxtkea2pyjqqi" path="res://scenes/player/player.tscn" id="2_qi026"]
 [ext_resource type="PackedScene" uid="uid://jbiuyoklkws2" path="res://scenes/objects/object_template.tscn" id="3_0bmqc"]
@@ -37,6 +38,7 @@ sources/0 = SubResource("TileSetAtlasSource_ncu3o")
 size = Vector2(32, 32)
 
 [node name="upsijam-6" type="Node2D" unique_id=963294564]
+script = ExtResource("1_8plsc")
 
 [node name="map" type="Node" parent="." unique_id=1303188955]
 
