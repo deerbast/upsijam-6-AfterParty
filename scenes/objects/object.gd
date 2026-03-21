@@ -40,17 +40,20 @@ func _physics_process(delta: float) -> void:
 		reset_object_state()
 	
 func apply_impact(impact_velocity: Vector2) -> void:
-	velocity += (impact_velocity - velocity) * IMPACT
+	velocity += (impact_velocity - velocity) * IMPACT / masse
 	
 func resolve_collisions() -> void:
 	for i in get_slide_collision_count():
 		var collision := get_slide_collision(i)
+		var impact_velocity := velocity
 		velocity -= velocity.project(collision.get_normal())
+
 		var body := collision.get_collider() as MovableObject
 		if body:
-			body.apply_impact(velocity)
+			body.apply_impact(impact_velocity)
 
 func player_grab_me(player: CharacterBody2D):
+	print(player, " grabs ", self)
 	# Configure grab
 	player.grabbed_object = self
 	_grabbed_by = player
@@ -64,6 +67,7 @@ func player_grab_me(player: CharacterBody2D):
 	create_tween().tween_property(self, "position", Vector2(0, -_pickup_height), 0.1)
 	
 func player_drop_me(player: CharacterBody2D):
+	print(player, " drops ", self)
 	# Remove from grabber
 	player.grabbed_object = null
 	reparent(_original_parent)
@@ -94,10 +98,12 @@ func _input(event: InputEvent) -> void:
 			var player_distance = global_position.distance_to(player.global_position)
 			if player_distance < _pickup_distance:
 				player_grab_me(player)
+				get_viewport().set_input_as_handled()
 				$Pickup.play(0)
-				
+
 	elif player.grabbed_object == self:
 		player_drop_me(player)
+		get_viewport().set_input_as_handled()
 		$Throw.play(0)
 		
 # This function checks if the object overlaps with the player
