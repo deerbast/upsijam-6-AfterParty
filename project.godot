@@ -21,8 +21,8 @@ DashTimer="*uid://d2e2d3x48kes6"
 
 [display]
 
-window/size/viewport_width=400
-window/size/viewport_height=240
+window/size/viewport_width=1200
+window/size/viewport_height=720
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"
