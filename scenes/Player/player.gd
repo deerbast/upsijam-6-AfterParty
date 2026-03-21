@@ -5,6 +5,8 @@ signal player_moved
 var speed = 60
 var TIMER = 0.25
 
+var grabbed_object: MovableObject = null
+
 signal dash_signal
 
 func _process(delta: float) -> void:

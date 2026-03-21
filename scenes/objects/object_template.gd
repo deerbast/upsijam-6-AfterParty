@@ -33,20 +33,28 @@ func resolve_collisions() -> void:
 			body.apply_impact(velocity)
 
 func _input(event: InputEvent) -> void:
+	if !event.is_pressed(): return
+	
+	var players = get_tree().get_first_node_in_group("Player").get_children()
+	assert(players.size() > 0)
+	var player = players[0]
+	
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if event.is_pressed():
+		if player.grabbed_object == self:
+			# Drop object
+			print("drop ", self)
+			player.grabbed_object = null
+			reparent(original_parent)
+			set_collision_layer_value(1,true)
+		elif player.grabbed_object == null:
 			var mouse_pos = get_global_mouse_position()
+			# Distance mouse pos to object
 			if global_position.distance_to(mouse_pos) > 5:
 				return
-			var player = get_tree().get_first_node_in_group("Player").get_children()
-			if player.size() != 0:
-				var player_distance = global_position.distance_to(player[0].global_position)
-				if player_distance < PICKUP_DISTANCE:
-					# Grab object here
-					reparent(player[0])
-					set_collision_layer_value(1,false)
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT:
-		reparent(original_parent)
-		set_collision_layer_value(1,true)
-			
-		
+			var player_distance = global_position.distance_to(player.global_position)
+			if player_distance < PICKUP_DISTANCE:
+				# Grab object here
+				print("take ", self)
+				player.grabbed_object = self
+				reparent(player)
+				set_collision_layer_value(1,false)
