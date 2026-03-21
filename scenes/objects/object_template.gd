@@ -1,10 +1,6 @@
 class_name MovableObject
 extends CharacterBody2D
 
-var is_grabbed : bool = false
-var old_mouse_pos : Vector2 = Vector2.ZERO
-
-var SPEED = 200
 var PICKUP_DISTANCE = 50
 var FROTEMENT_SOL = 1.5
 var IMPACT := 0.7

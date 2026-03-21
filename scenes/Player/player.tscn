@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dxtkea2pyjqqi"]
 
 [ext_resource type="Script" uid="uid://breqs1ddljudy" path="res://scenes/player/player.gd" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://d2e2d3x48kes6" path="res://scenes/player/timer.gd" id="2_g2els"]
+[ext_resource type="Script" uid="uid://dk7jscs72jd1y" path="res://scenes/player/dash_timer.gd" id="2_g2els"]
 [ext_resource type="Texture2D" uid="uid://cx1qold008314" path="res://assets/temporary/sprites/16x32 Idle-Sheet.png" id="3_lvxji"]
 [ext_resource type="Texture2D" uid="uid://cbqnlagy4b80c" path="res://assets/temporary/sprites/16x32 Run-Sheet.png" id="3_p47bc"]
 [ext_resource type="Texture2D" uid="uid://btd5wvasidp4d" path="res://assets/temporary/sprites/fruit.png" id="4_75vfm"]
@@ -316,7 +316,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D" unique_id=783921897]
+[node name="Player" type="CharacterBody2D" unique_id=783921897 groups=["Player"]]
 motion_mode = 1
 floor_constant_speed = true
 script = ExtResource("1_4flbx")
@@ -325,12 +325,12 @@ script = ExtResource("1_4flbx")
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_sh265")
 
-[node name="Timer" type="Timer" parent="." unique_id=174517216]
+[node name="DashTimer" type="Timer" parent="." unique_id=174517216]
 script = ExtResource("2_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1006457628]
 sprite_frames = SubResource("SpriteFrames_yj68g")
 animation = &"run-right-obj"
 
-[connection signal="dash_signal" from="." to="Timer" method="_on_player_dash_signal"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="on_dash_finished" from="DashTimer" to="." method="_on_dash_finished"]
+[connection signal="timeout" from="DashTimer" to="." method="_on_timer_timeout"]

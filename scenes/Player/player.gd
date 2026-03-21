@@ -1,39 +1,39 @@
 extends CharacterBody2D
 
 signal player_moved
-signal dash_signal
 
-var speed = 100
+# Player constants
+const SPEED_RUN = 80
+const SPEED_DASH = 250
+
+# Runtime states
+var speed = SPEED_RUN
 var dashing: bool = false
-var TIMER = 0.25
-
 var grabbed_object: MovableObject = null
 
+# External refs
 @onready var sprite = $AnimatedSprite2D
+@onready var dash = $DashTimer 
 
 func _physics_process(delta: float) -> void:
+	speed = SPEED_DASH if dashing else SPEED_RUN
 	var direction := Input.get_vector("Left", "Right", "Up", "Down")
-	velocity = direction * speed * speed_modifier()
-	if move_and_slide():
-		resolve_collisions()
+	velocity = direction * speed * _speed_modifier()
+	if move_and_slide(): resolve_collisions()
 	_update_animation()
 	emit_signal("player_moved")
 	
-func speed_modifier() -> float:
+func _speed_modifier() -> float:
 	if grabbed_object != null:
 		return (3 - grabbed_object.masse) * 0.3
-	else:
-		return 1
+	return 1
 
-func _process(delta: float) -> void:
-	pass
-	
 func _update_animation():
 	var velo = velocity
 	var prefix = "dash-" if dashing else "run-"
 	var suffix = "" if grabbed_object == null else "-obj"
 
-	if velo.length() < 10:
+	if velo.length() < (SPEED_RUN * 0.1):
 		# No movement
 		sprite.play("idle"+suffix)
 	elif abs(velo.x) > abs(velo.y):
@@ -46,16 +46,14 @@ func _update_animation():
 		sprite.play(prefix+dir+suffix)
 	
 func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.is_action_pressed("Dash"):
-		speed = 240
+	if event is InputEventKey and event.is_action_pressed("Dash") and dash.can_dash:
 		dashing = true
-		dash_signal.emit(TIMER)
+		dash.dash()
 
-func _on_timer_timeout() -> void:
-	speed = 60
+func _on_dash_finished() -> void:
 	dashing = false
 
-#Apply force onto object
+# Apply force onto object
 func resolve_collisions() -> void:
 	for i in get_slide_collision_count():
 		var collision := get_slide_collision(i)
