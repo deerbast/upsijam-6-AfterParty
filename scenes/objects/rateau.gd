@@ -14,6 +14,7 @@ func _on_area_2d_body_shape_entered(_body_rid: RID, body: Node2D, _body_shape_in
 	#print("Player in rateau")
 	if body.is_in_group("Player"):
 		print("Player in rateau")
+		$AudioStreamPlayer.play(0)
 		$AnimatedSprite2D.play("default")
 		body.blocked(1)
 

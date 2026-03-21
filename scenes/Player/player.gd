@@ -35,14 +35,18 @@ func _update_animation():
 	if velo.length() < (SPEED_RUN * 0.1):
 		# No movement
 		sprite.play("idle"+suffix)
-	elif abs(velo.x) > abs(velo.y):
-		# Horizontal movement
-		sprite.play(prefix+"right"+suffix)
-		sprite.flip_h = velo.x < 0
+		$Walking.stop()
 	else:
-		# Vertical movement
-		var dir = "front" if velo.y > 0 else "rear"
-		sprite.play(prefix+dir+suffix)
+		if !$Walking.playing:
+			$Walking.play(0)
+		if abs(velo.x) > abs(velo.y):
+			# Horizontal movement
+			sprite.play(prefix+"right"+suffix)
+			sprite.flip_h = velo.x < 0
+		else:
+			# Vertical movement
+			var dir = "front" if velo.y > 0 else "rear"
+			sprite.play(prefix+dir+suffix)
 	
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.is_action_pressed("Dash") and dash.can_dash:
@@ -53,6 +57,7 @@ func _input(event: InputEvent) -> void:
 func _on_dash_finished() -> void:
 	dashing = false
 	speed = SPEED_RUN
+	$Dash.play(0)
 
 # Apply force onto object
 func resolve_collisions() -> void:

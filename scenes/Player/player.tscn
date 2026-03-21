@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cbqnlagy4b80c" path="res://assets/temporary/sprites/16x32 Run-Sheet.png" id="3_p47bc"]
 [ext_resource type="Texture2D" uid="uid://btd5wvasidp4d" path="res://assets/temporary/sprites/fruit.png" id="4_75vfm"]
 [ext_resource type="Texture2D" uid="uid://caww301l0tlxy" path="res://assets/temporary/sprites/16x32 Walk-Sheet.png" id="4_p47bc"]
+[ext_resource type="AudioStream" uid="uid://c8iwxdmmb25i1" path="res://assets/walking.mp3" id="7_0owmy"]
+[ext_resource type="AudioStream" uid="uid://wn0u4c6wo7d1" path="res://assets/dash.mp3" id="7_qek5x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yj68g"]
 atlas = ExtResource("3_p47bc")
@@ -333,6 +335,14 @@ position = Vector2(0, 12.5)
 shape = SubResource("RectangleShape2D_sh265")
 
 [node name="BlockTimer" type="Timer" parent="." unique_id=783402733]
+
+[node name="Dash" type="AudioStreamPlayer" parent="." unique_id=98758452]
+stream = ExtResource("7_qek5x")
+volume_db = -12.0
+
+[node name="Walking" type="AudioStreamPlayer" parent="." unique_id=1701847229]
+stream = ExtResource("7_0owmy")
+volume_db = -7.0
 
 [connection signal="on_dash_finished" from="DashTimer" to="." method="_on_dash_finished"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_timer_timeout"]

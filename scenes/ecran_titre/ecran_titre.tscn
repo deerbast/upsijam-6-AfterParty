@@ -55,6 +55,7 @@ text = "Quit"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=967263729]
 stream = ExtResource("2_t63bs")
+volume_db = 10.0
 autoplay = true
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

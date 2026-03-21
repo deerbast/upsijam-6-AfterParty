@@ -6,9 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://jbiuyoklkws2" path="res://scenes/objects/object_template.tscn" id="3_0bmqc"]
 [ext_resource type="PackedScene" uid="uid://cf21mrb64cp20" path="res://scenes/firezone/fire_zone.tscn" id="4_0bmqc"]
 [ext_resource type="PackedScene" uid="uid://ccb56340cgjvs" path="res://scenes/objects/rateau.tscn" id="5_hebbi"]
+[ext_resource type="Texture2D" uid="uid://cxyvclt411l26" path="res://assets/mouse.png" id="7_o4ivr"]
+[ext_resource type="Texture2D" uid="uid://cigrlkcg0ou4v" path="res://assets/bottle_sprite.png" id="8_xyyut"]
+[ext_resource type="AudioStream" uid="uid://x08jyisol8of" path="res://assets/game_upsijam6.2_1.mp3" id="9_0q7t8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bmqc"]
 size = Vector2(32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xyyut"]
+load_path = "res://.godot/imported/wasd.png-2cadddfb015601dd071110f9a7e2286b.ctex"
 
 [node name="upsijam-6" type="Node2D" unique_id=963294564]
 script = ExtResource("1_8plsc")
@@ -62,3 +68,97 @@ position = Vector2(322, 267)
 [node name="Camera" type="Camera2D" parent="Player" unique_id=456315949]
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
+
+[node name="Tuto" type="Node" parent="." unique_id=533077238]
+
+[node name="Label4" type="Label" parent="Tuto" unique_id=1269388211]
+offset_left = 286.0
+offset_top = 150.0
+offset_right = 509.0
+offset_bottom = 173.0
+text = "Vite ! Je dois tout jeter au feu"
+
+[node name="TextureRect" type="TextureRect" parent="Tuto" unique_id=57056233]
+offset_left = 120.0
+offset_top = 151.0
+offset_right = 1144.0
+offset_bottom = 1175.0
+scale = Vector2(0.03, 0.03)
+texture = SubResource("CompressedTexture2D_xyyut")
+
+[node name="Label" type="Label" parent="Tuto" unique_id=1326690260]
+offset_left = 153.0
+offset_top = 155.0
+offset_right = 255.0
+offset_bottom = 178.0
+text = "Mouvements"
+
+[node name="TextureRect2" type="TextureRect" parent="Tuto" unique_id=1541371427]
+offset_left = 120.0
+offset_top = 210.0
+offset_right = 1144.0
+offset_bottom = 1234.0
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("7_o4ivr")
+
+[node name="Label2" type="Label" parent="Tuto" unique_id=1546332997]
+offset_left = 154.0
+offset_top = 181.0
+offset_right = 192.0
+offset_bottom = 204.0
+text = "Prendre"
+
+[node name="TextureRect3" type="TextureRect" parent="Tuto" unique_id=481649788]
+offset_left = 120.0
+offset_top = 178.00002
+offset_right = 1144.0
+offset_bottom = 1202.0
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("7_o4ivr")
+
+[node name="Label3" type="Label" parent="Tuto" unique_id=675340354]
+offset_left = 155.0
+offset_top = 213.0
+offset_right = 204.0
+offset_bottom = 236.0
+text = "Jeter"
+
+[node name="TextureRect5" type="TextureRect" parent="Tuto" unique_id=133800971]
+offset_left = 130.0
+offset_top = 273.0
+offset_right = 146.0
+offset_bottom = 289.0
+texture = ExtResource("8_xyyut")
+
+[node name="Label6" type="Label" parent="Tuto" unique_id=1086088230]
+offset_left = 136.0
+offset_top = 247.0
+offset_right = 185.0
+offset_bottom = 270.0
+text = "Score"
+
+[node name="Label8" type="Label" parent="Tuto" unique_id=2022915640]
+offset_left = 155.0
+offset_top = 290.0
+offset_right = 207.0
+offset_bottom = 313.0
+text = "150pts"
+
+[node name="Label7" type="Label" parent="Tuto" unique_id=807997946]
+offset_left = 156.0
+offset_top = 312.0
+offset_right = 208.0
+offset_bottom = 335.0
+text = "300pts"
+
+[node name="Label5" type="Label" parent="Tuto" unique_id=2097914625]
+offset_left = 155.0
+offset_top = 267.0
+offset_right = 204.0
+offset_bottom = 290.0
+text = "50pts"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1338462404]
+stream = ExtResource("9_0q7t8")
+volume_db = -3.0
+autoplay = true

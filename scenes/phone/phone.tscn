@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bg4lpq4xre4vl" path="res://scenes/phone/phone.gd" id="1_btltj"]
 [ext_resource type="Texture2D" uid="uid://caf7ro7jwaxlb" path="res://assets/phone.tres" id="1_kby2p"]
+[ext_resource type="AudioStream" uid="uid://mkdgs1x2r6f0" path="res://assets/mom.mp3" id="3_1aovg"]
+[ext_resource type="AudioStream" uid="uid://c2fnelec6438e" path="res://assets/ringtone.mp3" id="3_rlgmi"]
 
 [sub_resource type="Animation" id="Animation_qto6p"]
 length = 2.5
@@ -169,13 +171,26 @@ tracks/13/keys = {
 "update": 0,
 "values": [0.0, 1.0]
 }
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Label2:self_modulate:a")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(1, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_btltj"]
 _data = {
 &"RESET": SubResource("Animation_qto6p")
 }
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kby2p"]
+[sub_resource type="LabelSettings" id="LabelSettings_5v2va"]
+font_size = 22
 
 [sub_resource type="FontVariation" id="FontVariation_btltj"]
 
@@ -218,14 +233,25 @@ offset_bottom = 2804.0
 scale = Vector2(0.24, 0.24)
 texture = ExtResource("1_kby2p")
 
+[node name="Label2" type="Label" parent="." unique_id=294928989]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 254.0
+offset_right = 649.0
+offset_bottom = 353.0
+text = "Maman vous
+appelle
+"
+label_settings = SubResource("LabelSettings_5v2va")
+horizontal_alignment = 1
+
 [node name="Button" type="Button" parent="." unique_id=1986191900]
 layout_mode = 0
 offset_left = 496.0
 offset_top = 544.0
 offset_right = 696.0
 offset_bottom = 600.0
-text = "Slide Button"
-icon = SubResource("PlaceholderTexture2D_kby2p")
+text = "Slide to answer"
 text_overrun_behavior = 1
 autowrap_trim_flags = 0
 
@@ -257,7 +283,7 @@ self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 176.00003
 offset_top = 88.0
-offset_right = 1016.0001
+offset_right = 1016.00024
 offset_bottom = 947.0
 scale = Vector2(0.4, 0.4)
 texture = SubResource("CompressedTexture2D_kby2p")
@@ -279,7 +305,7 @@ self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 175.00002
 offset_top = 194.00002
-offset_right = 1015.00037
+offset_right = 1015.00024
 offset_bottom = 1053.0001
 scale = Vector2(0.4, 0.4)
 texture = SubResource("CompressedTexture2D_btltj")
@@ -305,6 +331,15 @@ offset_bottom = 591.0
 scale = Vector2(1.73, 1.73)
 text = "Continue"
 
+[node name="Sonnerie_MP3" type="AudioStreamPlayer" parent="." unique_id=2088328673]
+stream = ExtResource("3_rlgmi")
+volume_db = 7.0
+
+[node name="MomAudio" type="AudioStreamPlayer" parent="." unique_id=842740833]
+stream = ExtResource("3_1aovg")
+volume_db = 7.0
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="finished" from="Sonnerie_MP3" to="." method="_on_sonnerie_mp_3_finished"]
