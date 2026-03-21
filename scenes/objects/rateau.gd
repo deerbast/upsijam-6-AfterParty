@@ -4,7 +4,7 @@ extends StaticBody2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$AnimatedSprite2D.stop()
-
+	$AnimatedSprite2D.set_frame_and_progress(0,0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -15,4 +15,8 @@ func _on_area_2d_body_shape_entered(_body_rid: RID, body: Node2D, _body_shape_in
 	if body.is_in_group("Player"):
 		print("Player in rateau")
 		$AnimatedSprite2D.play("default")
-		body.blocked(2)
+		body.blocked(1)
+
+func _on_animated_sprite_2d_animation_looped() -> void:
+	$AnimatedSprite2D.stop()
+	$AnimatedSprite2D.set_frame_and_progress(0,0)

@@ -1,11 +1,49 @@
 [gd_scene format=3 uid="uid://ccb56340cgjvs"]
 
 [ext_resource type="Script" uid="uid://dcbqmlvnlkgjp" path="res://scenes/objects/rateau.gd" id="1_lnf81"]
+[ext_resource type="Texture2D" uid="uid://cnegkohhdj873" path="res://assets/rake_sprite.png" id="2_8ijdy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msps8"]
+atlas = ExtResource("2_8ijdy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ja45"]
+atlas = ExtResource("2_8ijdy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqh45"]
+atlas = ExtResource("2_8ijdy")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thulk"]
+atlas = ExtResource("2_8ijdy")
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uswfk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msps8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ja45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqh45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thulk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uswfk"]
-size = Vector2(8, 8)
+size = Vector2(30, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kaitm"]
+size = Vector2(26, 12)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lnf81"]
 size = Vector2(8, 8)
@@ -19,19 +57,23 @@ script = ExtResource("1_lnf81")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=331818679]
 sprite_frames = SubResource("SpriteFrames_uswfk")
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1586752399]
+position = Vector2(1, -0.5)
 shape = SubResource("RectangleShape2D_uswfk")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1211963819]
+[node name="ActivationArea" type="Area2D" parent="." unique_id=1211963819]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1683787596]
-shape = SubResource("RectangleShape2D_uswfk")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActivationArea" unique_id=1683787596]
+position = Vector2(3, 7)
+shape = SubResource("RectangleShape2D_kaitm")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1637216682]
+[node name="Debug" type="Sprite2D" parent="." unique_id=1637216682]
+visible = false
 texture = SubResource("PlaceholderTexture2D_lnf81")
 
-[node name="Label" type="Label" parent="Sprite2D" unique_id=1193606027]
+[node name="Label" type="Label" parent="Debug" unique_id=1193606027]
 offset_left = -4.0
 offset_top = -4.0
 offset_right = 4.0
@@ -41,5 +83,7 @@ label_settings = SubResource("LabelSettings_uswfk")
 horizontal_alignment = 1
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
+[connection signal="area_entered" from="ActivationArea" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_shape_entered" from="ActivationArea" to="." method="_on_area_2d_body_shape_entered"]
