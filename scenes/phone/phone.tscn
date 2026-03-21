@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://c1ldoduhvxwkl"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qto6p"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kby2p"]
+
+[sub_resource type="FontVariation" id="FontVariation_btltj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1aovg"]
+font = SubResource("FontVariation_btltj")
+font_size = 21
+
+[sub_resource type="Animation" id="Animation_qto6p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(127.999725, 40)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(128, 184)]
+}
+
+[sub_resource type="Animation" id="Animation_kby2p"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(128, 184), Vector2(242.99973, 184)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.001, 0.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(127.999725, 40), Vector2(13, 40)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_btltj"]
+_data = {
+&"RESET": SubResource("Animation_qto6p"),
+&"new_animation": SubResource("Animation_kby2p")
+}
+
+[node name="Control" type="Control" unique_id=82462864]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=420158233]
+layout_mode = 0
+offset_left = 112.0
+offset_right = 264.0
+offset_bottom = 240.0
+texture = SubResource("PlaceholderTexture2D_qto6p")
+
+[node name="Button" type="Button" parent="." unique_id=1986191900]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 184.0
+offset_right = 255.99973
+offset_bottom = 224.0
+text = "Slide Button"
+icon = SubResource("PlaceholderTexture2D_kby2p")
+text_overrun_behavior = 1
+autowrap_trim_flags = 0
+
+[node name="Label" type="Label" parent="." unique_id=763562941]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 8.0
+offset_right = 248.0
+offset_bottom = 40.0
+text = "MyPhone 8"
+label_settings = SubResource("LabelSettings_1aovg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1160076659]
+libraries/ = SubResource("AnimationLibrary_btltj")
