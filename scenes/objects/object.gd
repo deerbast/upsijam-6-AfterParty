@@ -9,7 +9,8 @@ const IMPACT := 0.7
 @export_range(0.1, 2.0, 0.1, "Masse") var masse := 0.1
 @export_range(20, 60, 1, "Pickup Distance") var pickup_distance = 30
 
-var _original_parent : Node
+var _original_parent: Node
+var _grabbed_by: CharacterBody2D = null # Player grabbing the object
 
 @onready var collider = $Collider
 
@@ -20,6 +21,16 @@ func _physics_process(delta: float) -> void:
 	velocity *= 1.0 - FLOOR_FRICTION * delta * masse
 	if move_and_slide():
 		resolve_collisions()
+	
+	# Set back collisions with player once out of range
+	if _grabbed_by != null and\
+	 _grabbed_by.grabbed_object == null and\
+	!is_overlapping_body(_grabbed_by):
+		await get_tree().physics_frame # Temporize slightly
+		_grabbed_by.remove_collision_exception_with(self)
+		remove_collision_exception_with(_grabbed_by)
+		print("Set back collision between ", self, " and ", _grabbed_by)
+		_grabbed_by = null
 	
 func apply_impact(impact_velocity: Vector2) -> void:
 	velocity += (impact_velocity - velocity) * IMPACT
@@ -33,19 +44,25 @@ func resolve_collisions() -> void:
 			body.apply_impact(velocity)
 
 func player_grab_me(player: CharacterBody2D):
-	# Grab object here
+	# Configure grab
 	player.grabbed_object = self
+	_grabbed_by = player
+	# Parent and collisions
 	reparent(player)
+	add_collision_exception_with(player)
+	player.add_collision_exception_with(self)
+	# Move object on top of grabber
 	velocity = Vector2.ZERO
 	create_tween().tween_property(self, "position", Vector2(0, -16), 0.1)
-	#set_collision_layer_value(1, false)
 	
 func player_drop_me(player: CharacterBody2D):
-	reparent(_original_parent)
+	# Remove from grabber
 	player.grabbed_object = null
-	#set_collision_layer_value(1,true)
+	reparent(_original_parent)
+	# Drop velocity
 	var mouse_pos = get_global_mouse_position()
 	velocity += global_position.direction_to(mouse_pos) * DROP_FORCE
+	# Collisions are set back once colliders are out 
 
 func _input(event: InputEvent) -> void:
 	if !event.is_pressed(): return
@@ -67,3 +84,21 @@ func _input(event: InputEvent) -> void:
 	elif player.grabbed_object == self:
 		player_drop_me(player)
 		$Throw.play(0)
+		
+func is_overlapping_body(other: CharacterBody2D) -> bool:
+	var space := get_world_2d().direct_space_state
+	assert(collider.shape != null)
+	
+	var query := PhysicsShapeQueryParameters2D.new()
+	query.shape = collider.shape
+	query.transform = collider.global_transform
+	query.collide_with_bodies = true
+	query.collide_with_areas = false
+	query.exclude = [self]
+
+	var results := space.intersect_shape(query)
+
+	for result in results:
+		if result.collider == other:
+			return true
+	return false

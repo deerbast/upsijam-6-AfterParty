@@ -68,7 +68,6 @@ position = Vector2(569, 338)
 position = Vector2(396, 264)
 
 [node name="Player" parent="." unique_id=2085354336 instance=ExtResource("2_qi026")]
-z_index = 5
 position = Vector2(322, 267)
 
 [node name="Camera" type="Camera2D" parent="Player" unique_id=456315949]

@@ -332,6 +332,7 @@ animations = [{
 size = Vector2(10, 7)
 
 [node name="Player" type="CharacterBody2D" unique_id=783921897 groups=["Player"]]
+z_index = 1
 motion_mode = 1
 floor_constant_speed = true
 script = ExtResource("1_4flbx")
