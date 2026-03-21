@@ -1,26 +1,27 @@
 class_name MovableObject
 extends CharacterBody2D
 
-var PICKUP_DISTANCE = 50
-var FROTEMENT_SOL = 1.5
-var IMPACT := 0.7
-@export_range(0,2,1, "Masse") var masse := 0.0
+# Object constants
+const PICKUP_DISTANCE = 50
+const FLOOR_FRICTION = 3.0
+const IMPACT := 0.7
 
-var original_parent : Node
+@export_range(0.1, 1.0, 0.1, "Masse") var masse := 0.1
+
+var _original_parent : Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	original_parent = get_parent()
-	scale = Vector2(1 + masse, 1 + masse)
+	_original_parent = get_parent()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	velocity *= 1.0 - FROTEMENT_SOL * delta
+	velocity *= 1.0 - FLOOR_FRICTION * delta * masse
 	if move_and_slide():
 		resolve_collisions()
 	
 func apply_impact(impact_velocity: Vector2) -> void:
-	velocity += (impact_velocity - velocity) * IMPACT
+	velocity += (impact_velocity - velocity) * IMPACT * 1.0/masse
 	
 func resolve_collisions() -> void:
 	for i in get_slide_collision_count():
@@ -49,7 +50,7 @@ func _input(event: InputEvent) -> void:
 				set_collision_layer_value(1,false)
 				$Pickup.play(0)
 		elif player.grabbed_object == self:
-			reparent(original_parent)
+			reparent(_original_parent)
 			set_collision_layer_value(1,true)
 			player.grabbed_object = null
 			# Throw object

@@ -1,24 +1,16 @@
 [gd_scene format=3 uid="uid://jbiuyoklkws2"]
 
-[ext_resource type="Script" uid="uid://b825ci55st2uu" path="res://scenes/objects/object_template.gd" id="1_ay5xa"]
+[ext_resource type="Script" uid="uid://b825ci55st2uu" path="res://scenes/objects/object.gd" id="1_ay5xa"]
 [ext_resource type="AudioStream" uid="uid://b7tjd5dobtfwv" path="res://assets/pick up.mp3" id="2_ki0kp"]
 [ext_resource type="AudioStream" uid="uid://cp02bc0hy7pyu" path="res://assets/throw.mp3" id="3_41hww"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bvgro"]
 size = Vector2(8, 8)
 
-[sub_resource type="Gradient" id="Gradient_bvgro"]
-colors = PackedColorArray(1, 0, 0, 1, 1, 0, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ay5xa"]
-gradient = SubResource("Gradient_bvgro")
-width = 8
-height = 8
-
 [sub_resource type="LabelSettings" id="LabelSettings_d2yhh"]
 font_size = 6
 
-[node name="Object" type="CharacterBody2D" unique_id=2145525878]
+[node name="Object16px" type="CharacterBody2D" unique_id=2145525878]
 collision_layer = 3
 motion_mode = 1
 floor_constant_speed = true
@@ -29,7 +21,9 @@ script = ExtResource("1_ay5xa")
 shape = SubResource("RectangleShape2D_bvgro")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=234293093]
-texture = SubResource("GradientTexture2D_ay5xa")
+position = Vector2(-2.3841858e-07, 4.7683716e-07)
+scale = Vector2(0.023391811, 0.015841587)
+texture = ExtResource("2_apxko")
 
 [node name="Label" type="Label" parent="Sprite2D" unique_id=516878529]
 offset_left = -4.0
