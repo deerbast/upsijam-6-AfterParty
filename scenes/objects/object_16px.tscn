@@ -8,9 +8,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bvgro"]
 size = Vector2(16, 16)
 
-[sub_resource type="LabelSettings" id="LabelSettings_d2yhh"]
-font_size = 6
-
 [node name="Object16px" type="CharacterBody2D" unique_id=2145525878]
 motion_mode = 1
 floor_constant_speed = true

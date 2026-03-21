@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://cigrlkcg0ou4v" path="res://assets/bottle_sprite.png" id="8_xyyut"]
 [ext_resource type="AudioStream" uid="uid://x08jyisol8of" path="res://assets/game_upsijam6.2_1.mp3" id="9_0q7t8"]
 [ext_resource type="PackedScene" uid="uid://fplijkr6kab2" path="res://scenes/objects/object_32px.tscn" id="5_o4ivr"]
+[ext_resource type="Texture2D" uid="uid://cigrlkcg0ou4v" path="res://assets/bottle_sprite.png" id="6_0q7t8"]
+[ext_resource type="Texture2D" uid="uid://cklxadwk0tesr" path="res://assets/pizza_sprite.png" id="8_l8yqd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bmqc"]
 size = Vector2(32, 32)
@@ -48,13 +50,20 @@ position = Vector2(569, 338)
 [node name="Rateau" parent="objects" unique_id=2074256559 instance=ExtResource("5_hebbi")]
 position = Vector2(396, 264)
 
-[node name="Object16px" parent="objects" unique_id=2145525878 instance=ExtResource("3_0bmqc")]
-position = Vector2(342, 335)
-masse = 1.5
+[node name="Bottle1" parent="objects" unique_id=2145525878 instance=ExtResource("3_0bmqc")]
+position = Vector2(340, 321)
+texture = ExtResource("6_0q7t8")
+masse = 0.5
 
-[node name="Object32px" parent="objects" unique_id=372562865 instance=ExtResource("5_o4ivr")]
-position = Vector2(394, 298)
-masse = 2.0
+[node name="Pizza1" parent="objects" unique_id=372562865 instance=ExtResource("5_o4ivr")]
+position = Vector2(389, 309)
+texture = ExtResource("8_l8yqd")
+masse = 1.5
+pickup_distance = 50
+
+[node name="Bottle2" parent="objects" unique_id=486303983 instance=ExtResource("3_0bmqc")]
+position = Vector2(376, 346)
+texture = ExtResource("6_0q7t8")
 
 [node name="Player" parent="." unique_id=2085354336 instance=ExtResource("2_qi026")]
 position = Vector2(322, 267)

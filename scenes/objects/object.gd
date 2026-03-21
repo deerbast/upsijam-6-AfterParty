@@ -6,6 +6,12 @@ const DROP_FORCE = 100
 const FLOOR_FRICTION = 3.0
 const IMPACT := 0.7
 
+@export var texture: Texture2D:
+	set(value):
+		texture = value
+		if has_node("Sprite2D"):
+			$Sprite2D.texture = value
+			
 @export_range(0.1, 2.0, 0.1, "Masse") var masse := 0.1
 @export_range(20, 60, 1, "Pickup Distance") var pickup_distance = 30
 
