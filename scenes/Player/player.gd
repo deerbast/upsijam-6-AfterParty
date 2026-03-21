@@ -6,16 +6,10 @@ var speed = 60
 var NORMAL_SPEED = 60
 var tDASH = 0.25 #Timer
 var tENEMY = 2 #Rateau
-var tDASHTIMEOUT = 5 #Timeout du timer
 
 var grabbed_object: MovableObject = null
 
-@export var dashtimer: Timer
-
 signal dash_signal
-
-func _ready() -> void:
-	dashtimer = $DashTimeout
 
 func _process(delta: float) -> void:
 	look_at(get_global_mouse_position())
@@ -34,10 +28,9 @@ func _physics_process(delta: float) -> void:
 	emit_signal("player_moved")
 	
 func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.is_action_pressed("Dash") and $DashTimeout.is_stopped():
+	if event is InputEventKey and event.is_action_pressed("Dash"):
 		speed = NORMAL_SPEED * 4
 		$Timer.start(tDASH)
-		$DashTimeout.start(tDASHTIMEOUT)
 
 func _on_timer_timeout() -> void:
 	speed = NORMAL_SPEED

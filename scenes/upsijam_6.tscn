@@ -2,11 +2,10 @@
 
 [ext_resource type="Script" uid="uid://c1wpporgwdgrp" path="res://scenes/upsijam_6.gd" id="1_8plsc"]
 [ext_resource type="Texture2D" uid="uid://bj5u8vx13064g" path="res://assets/temporary/sprites/world_tileset.png" id="1_kbrdn"]
-[ext_resource type="PackedScene" uid="uid://dxtkea2pyjqqi" path="res://scenes/Player/player.tscn" id="2_qi026"]
+[ext_resource type="PackedScene" uid="uid://dxtkea2pyjqqi" path="res://scenes/player/player.tscn" id="2_qi026"]
 [ext_resource type="PackedScene" uid="uid://jbiuyoklkws2" path="res://scenes/objects/object_template.tscn" id="3_0bmqc"]
 [ext_resource type="PackedScene" uid="uid://cf21mrb64cp20" path="res://scenes/firezone/fire_zone.tscn" id="4_0bmqc"]
 [ext_resource type="PackedScene" uid="uid://ccb56340cgjvs" path="res://scenes/objects/rateau.tscn" id="5_hebbi"]
-[ext_resource type="PackedScene" uid="uid://cjcemuwnbkley" path="res://scenes/interface.tscn" id="7_o4ivr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ncu3o"]
 texture = ExtResource("1_kbrdn")
@@ -76,6 +75,3 @@ position = Vector2(191, 94)
 [node name="Player" parent="." unique_id=2085354336 instance=ExtResource("2_qi026")]
 z_index = 5
 position = Vector2(92, 81)
-
-[node name="Control" parent="." unique_id=1468443770 instance=ExtResource("7_o4ivr")]
-z_index = 10

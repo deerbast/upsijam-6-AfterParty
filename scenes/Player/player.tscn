@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://dxtkea2pyjqqi"]
 
-[ext_resource type="Script" uid="uid://breqs1ddljudy" path="res://scenes/Player/player.gd" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://d2e2d3x48kes6" path="res://scenes/Player/timer.gd" id="2_g2els"]
+[ext_resource type="Script" uid="uid://breqs1ddljudy" path="res://scenes/player/player.gd" id="1_4flbx"]
+[ext_resource type="Script" path="res://scenes/player/dash_timer.gd" id="2_g2els"]
 [ext_resource type="Texture2D" uid="uid://d015wfxmeroxv" path="res://assets/asset.png" id="2_gqjuk"]
-[ext_resource type="Script" uid="uid://cfqgtrmag7f0h" path="res://scenes/Player/dash_timeout.gd" id="4_c4h5g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sh265"]
 size = Vector2(14, 14)
@@ -24,9 +23,6 @@ texture = ExtResource("2_gqjuk")
 
 [node name="Timer" type="Timer" parent="." unique_id=174517216]
 script = ExtResource("2_g2els")
-
-[node name="DashTimeout" type="Timer" parent="." unique_id=43645343]
-script = ExtResource("4_c4h5g")
 
 [connection signal="dash_signal" from="." to="Timer" method="_on_player_dash_signal"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]
