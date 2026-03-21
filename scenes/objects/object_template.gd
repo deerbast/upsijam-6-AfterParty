@@ -1,3 +1,4 @@
+class_name MovableObject
 extends CharacterBody2D
 
 var is_grabbed : bool = false
@@ -5,6 +6,8 @@ var old_mouse_pos : Vector2 = Vector2.ZERO
 
 var SPEED = 200
 var PICKUP_DISTANCE = 50
+var FROTEMENT_SOL = 1.5
+var IMPACT := 0.7
 
 var original_parent : Node
 
@@ -13,8 +16,21 @@ func _ready() -> void:
 	original_parent = get_parent()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _physics_process(delta: float) -> void:
+	velocity *= 1.0 - FROTEMENT_SOL * delta
+	if move_and_slide():
+		resolve_collisions()
+	
+func apply_impact(impact_velocity: Vector2) -> void:
+	velocity += (impact_velocity - velocity) * IMPACT
+	
+func resolve_collisions() -> void:
+	for i in get_slide_collision_count():
+		var collision := get_slide_collision(i)
+		velocity -= velocity.project(collision.get_normal())
+		var body := collision.get_collider() as MovableObject
+		if body:
+			body.apply_impact(velocity)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:

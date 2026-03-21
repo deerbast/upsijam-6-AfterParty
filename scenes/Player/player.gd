@@ -13,7 +13,8 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = direction * speed
-	move_and_slide()
+	if move_and_slide():
+		resolve_collisions()
 	emit_signal("player_moved")
 	
 func _input(event: InputEvent) -> void:
@@ -23,3 +24,11 @@ func _input(event: InputEvent) -> void:
 
 func _on_timer_timeout() -> void:
 	speed = 60
+
+#Apply force onto object
+func resolve_collisions() -> void:
+	for i in get_slide_collision_count():
+		var collision := get_slide_collision(i)
+		var body := collision.get_collider() as MovableObject
+		if body:
+			body.apply_impact(velocity)
