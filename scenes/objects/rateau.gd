@@ -19,4 +19,7 @@ func _on_area_2d_body_shape_entered(_body_rid: RID, body: Node2D, _body_shape_in
 
 func _on_animated_sprite_2d_animation_looped() -> void:
 	$AnimatedSprite2D.stop()
+	$AnimatedSprite2D.set_frame_and_progress(3,0)
+	await get_tree().create_timer(1).timeout
 	$AnimatedSprite2D.set_frame_and_progress(0,0)
+	

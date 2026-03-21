@@ -43,7 +43,7 @@ animations = [{
 size = Vector2(30, 27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kaitm"]
-size = Vector2(26, 12)
+size = Vector2(8.78, 12)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lnf81"]
 size = Vector2(8, 8)
@@ -57,16 +57,17 @@ script = ExtResource("1_lnf81")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=331818679]
 sprite_frames = SubResource("SpriteFrames_uswfk")
-frame = 2
+speed_scale = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1586752399]
+visible = false
 position = Vector2(1, -0.5)
 shape = SubResource("RectangleShape2D_uswfk")
 
 [node name="ActivationArea" type="Area2D" parent="." unique_id=1211963819]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActivationArea" unique_id=1683787596]
-position = Vector2(3, 7)
+position = Vector2(-5.64, 7)
 shape = SubResource("RectangleShape2D_kaitm")
 
 [node name="Debug" type="Sprite2D" parent="." unique_id=1637216682]

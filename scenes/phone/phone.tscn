@@ -170,37 +170,9 @@ tracks/13/keys = {
 "values": [0.0, 1.0]
 }
 
-[sub_resource type="Animation" id="Animation_kby2p"]
-resource_name = "new_animation"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Button:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.99),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(128, 184), Vector2(242.99973, 184)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Button:size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.001, 0.99),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(127.999725, 40), Vector2(13, 40)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_btltj"]
 _data = {
-&"RESET": SubResource("Animation_qto6p"),
-&"new_animation": SubResource("Animation_kby2p")
+&"RESET": SubResource("Animation_qto6p")
 }
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kby2p"]

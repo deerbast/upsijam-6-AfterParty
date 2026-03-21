@@ -1,14 +1,11 @@
 [gd_scene format=3 uid="uid://dxtkea2pyjqqi"]
 
 [ext_resource type="Script" uid="uid://breqs1ddljudy" path="res://scenes/player/player.gd" id="1_4flbx"]
-[ext_resource type="Script" path="res://scenes/player/dash_timer.gd" id="2_g2els"]
+[ext_resource type="Script" uid="uid://dk7jscs72jd1y" path="res://scenes/player/dash_timer.gd" id="2_g2els"]
 [ext_resource type="Texture2D" uid="uid://cx1qold008314" path="res://assets/temporary/sprites/16x32 Idle-Sheet.png" id="3_lvxji"]
 [ext_resource type="Texture2D" uid="uid://cbqnlagy4b80c" path="res://assets/temporary/sprites/16x32 Run-Sheet.png" id="3_p47bc"]
 [ext_resource type="Texture2D" uid="uid://btd5wvasidp4d" path="res://assets/temporary/sprites/fruit.png" id="4_75vfm"]
 [ext_resource type="Texture2D" uid="uid://caww301l0tlxy" path="res://assets/temporary/sprites/16x32 Walk-Sheet.png" id="4_p47bc"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sh265"]
-size = Vector2(10, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yj68g"]
 atlas = ExtResource("3_p47bc")
@@ -316,21 +313,24 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sh265"]
+size = Vector2(10, 7)
+
 [node name="Player" type="CharacterBody2D" unique_id=783921897 groups=["Player"]]
 motion_mode = 1
 floor_constant_speed = true
 script = ExtResource("1_4flbx")
-
-[node name="Collision" type="CollisionShape2D" parent="." unique_id=1431942185]
-position = Vector2(0, 4)
-shape = SubResource("RectangleShape2D_sh265")
 
 [node name="DashTimer" type="Timer" parent="." unique_id=174517216]
 script = ExtResource("2_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1006457628]
 sprite_frames = SubResource("SpriteFrames_yj68g")
-animation = &"run-right-obj"
+animation = &"idle"
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1431942185]
+position = Vector2(0, 12.5)
+shape = SubResource("RectangleShape2D_sh265")
 
 [node name="BlockTimer" type="Timer" parent="." unique_id=783402733]
 
