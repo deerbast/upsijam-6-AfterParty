@@ -2,12 +2,12 @@ class_name MovableObject
 extends CharacterBody2D
 
 # Object constants
-const PICKUP_DISTANCE = 30
 const DROP_FORCE = 100
 const FLOOR_FRICTION = 3.0
 const IMPACT := 0.7
 
 @export_range(0.1, 2.0, 0.1, "Masse") var masse := 0.1
+@export_range(20, 60, 1, "Pickup Distance") var pickup_distance = 30
 
 var _original_parent : Node
 
@@ -60,7 +60,7 @@ func _input(event: InputEvent) -> void:
 		if abs(local_mouse.x) <= shape.extents.x and abs(local_mouse.y) <= shape.extents.y:
 			# Check pickup distance
 			var player_distance = global_position.distance_to(player.global_position)
-			if player_distance < PICKUP_DISTANCE:
+			if player_distance < pickup_distance:
 				player_grab_me(player)
 				$Pickup.play(0)
 				

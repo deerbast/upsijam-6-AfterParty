@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cxyvclt411l26" path="res://assets/mouse.png" id="7_o4ivr"]
 [ext_resource type="Texture2D" uid="uid://cigrlkcg0ou4v" path="res://assets/bottle_sprite.png" id="8_xyyut"]
 [ext_resource type="AudioStream" uid="uid://x08jyisol8of" path="res://assets/game_upsijam6.2_1.mp3" id="9_0q7t8"]
+[ext_resource type="PackedScene" uid="uid://fplijkr6kab2" path="res://scenes/objects/object_32px.tscn" id="5_o4ivr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bmqc"]
 size = Vector2(32, 32)
@@ -51,6 +52,11 @@ position = Vector2(371, 316)
 
 [node name="Object1" parent="objects" unique_id=860046464 instance=ExtResource("3_0bmqc")]
 position = Vector2(402, 364)
+
+[node name="Object5" parent="objects" unique_id=792598255 instance=ExtResource("5_o4ivr")]
+position = Vector2(467, 319)
+masse = 2.0
+pickup_distance = 50
 
 [node name="Rateau2" parent="objects" unique_id=1023904740 instance=ExtResource("5_hebbi")]
 position = Vector2(454, 435)
