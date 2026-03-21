@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b6hycyq0dqawn" path="res://scenes/ending/ending.gd" id="1_uhqb6"]
 [ext_resource type="Texture2D" uid="uid://dr40isj0iy4mn" path="res://assets/Confetti (16x16).png" id="2_fycm3"]
-[ext_resource type="AudioStream" uid="uid://c3h17g8273eps" path="res://assets/ending.mp3" id="3_e0o6y"]
+[ext_resource type="AudioStream" uid="uid://c3h17g8273eps" path="res://assets/music/ending.mp3" id="3_e0o6y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_iy4oq"]
 font_size = 107

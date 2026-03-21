@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://fplijkr6kab2" path="res://scenes/objects/object_32px.tscn" id="5_o4ivr"]
 [ext_resource type="Texture2D" uid="uid://cigrlkcg0ou4v" path="res://assets/bottle_sprite.png" id="6_0q7t8"]
 [ext_resource type="Texture2D" uid="uid://cxyvclt411l26" path="res://assets/mouse.png" id="7_o4ivr"]
-[ext_resource type="AudioStream" uid="uid://x08jyisol8of" path="res://assets/game_upsijam6.2_1.mp3" id="9_0q7t8"]
+[ext_resource type="AudioStream" uid="uid://x08jyisol8of" path="res://assets/music/game_upsijam6.2_1.mp3" id="9_0q7t8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bmqc"]
 size = Vector2(32, 32)

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dcbqmlvnlkgjp" path="res://scenes/objects/rateau.gd" id="1_lnf81"]
 [ext_resource type="Texture2D" uid="uid://cnegkohhdj873" path="res://assets/rake_sprite.png" id="2_8ijdy"]
-[ext_resource type="AudioStream" uid="uid://c4f5e8rjlxd3v" path="res://assets/rateau.mp3" id="3_msps8"]
+[ext_resource type="AudioStream" uid="uid://c4f5e8rjlxd3v" path="res://assets/music/rateau.mp3" id="3_msps8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_msps8"]
 atlas = ExtResource("2_8ijdy")

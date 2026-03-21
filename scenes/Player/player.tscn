@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://btd5wvasidp4d" path="res://assets/temporary/sprites/fruit.png" id="4_75vfm"]
 [ext_resource type="Texture2D" uid="uid://caww301l0tlxy" path="res://assets/temporary/sprites/16x32 Walk-Sheet.png" id="4_p47bc"]
 [ext_resource type="Texture2D" uid="uid://cedhp1f8eeppr" path="res://assets/temporary/sprites/slime_green.png" id="6_0owmy"]
-[ext_resource type="AudioStream" uid="uid://c8iwxdmmb25i1" path="res://assets/walking.mp3" id="7_0owmy"]
-[ext_resource type="AudioStream" uid="uid://wn0u4c6wo7d1" path="res://assets/dash.mp3" id="7_qek5x"]
+[ext_resource type="AudioStream" uid="uid://c8iwxdmmb25i1" path="res://assets/music/walking.mp3" id="7_0owmy"]
+[ext_resource type="AudioStream" uid="uid://wn0u4c6wo7d1" path="res://assets/music/dash.mp3" id="7_qek5x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yj68g"]
 atlas = ExtResource("3_p47bc")
