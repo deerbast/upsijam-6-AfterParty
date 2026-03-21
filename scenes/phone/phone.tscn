@@ -333,11 +333,10 @@ text = "Continue"
 
 [node name="Sonnerie_MP3" type="AudioStreamPlayer" parent="." unique_id=2088328673]
 stream = ExtResource("3_rlgmi")
-volume_db = 7.0
 
 [node name="MomAudio" type="AudioStreamPlayer" parent="." unique_id=842740833]
 stream = ExtResource("3_1aovg")
-volume_db = 7.0
+volume_db = 16.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
