@@ -17,6 +17,7 @@ height = 8
 font_size = 6
 
 [node name="Object" type="CharacterBody2D" unique_id=2145525878]
+collision_layer = 3
 motion_mode = 1
 floor_constant_speed = true
 safe_margin = 2.0

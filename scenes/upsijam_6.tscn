@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bj5u8vx13064g" path="res://assets/temporary/sprites/world_tileset.png" id="1_kbrdn"]
 [ext_resource type="PackedScene" uid="uid://dxtkea2pyjqqi" path="res://scenes/Player/player.tscn" id="2_qi026"]
 [ext_resource type="PackedScene" uid="uid://jbiuyoklkws2" path="res://scenes/object_template.tscn" id="3_0bmqc"]
+[ext_resource type="PackedScene" path="res://scenes/fire_zone.tscn" id="4_0bmqc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ncu3o"]
 texture = ExtResource("1_kbrdn")
@@ -32,6 +33,9 @@ texture = ExtResource("1_kbrdn")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ncu3o")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0bmqc"]
+size = Vector2(32, 32)
+
 [node name="upsijam-6" type="Node2D" unique_id=963294564]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1672150908]
@@ -52,3 +56,9 @@ position = Vector2(92, 81)
 
 [node name="Object" parent="." unique_id=860046464 instance=ExtResource("3_0bmqc")]
 position = Vector2(188, 120)
+
+[node name="FireZone" parent="." unique_id=39517027 instance=ExtResource("4_0bmqc")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FireZone" unique_id=50742738]
+position = Vector2(80, 176)
+shape = SubResource("RectangleShape2D_0bmqc")
