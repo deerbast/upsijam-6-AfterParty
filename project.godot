@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-DashTimer="*uid://d2e2d3x48kes6"
+Global="*uid://ckfexnb62hluf"
 
 [display]
 
@@ -31,6 +31,7 @@ window/stretch/scale_mode="integer"
 
 Player=""
 Enemy=""
+Object=""
 
 [input]
 
