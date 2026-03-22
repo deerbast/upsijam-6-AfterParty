@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://dowxse7iu1qie"]
+
+[ext_resource type="Script" uid="uid://cha2xoauh48yp" path="res://scenes/leaderboard/leaderboard.gd" id="1_b6xng"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0fjt0"]
+font_size = 107
+
+[sub_resource type="Theme" id="Theme_0fjt0"]
+default_font_size = 31
+
+[sub_resource type="Theme" id="Theme_3ilyb"]
+default_font_size = 31
+
+[sub_resource type="Theme" id="Theme_fycm3"]
+default_font_size = 57
+
+[node name="Control" type="Control" unique_id=1151109522]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b6xng")
+metadata/_edit_vertical_guides_ = [600.0]
+
+[node name="Bravo" type="Label" parent="." unique_id=1987908803]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 2.0
+offset_right = 933.0
+offset_bottom = 149.0
+text = "Leaderboard"
+label_settings = SubResource("LabelSettings_0fjt0")
+
+[node name="PlayerName" type="LineEdit" parent="." unique_id=616410776]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 624.0
+offset_right = 568.0
+offset_bottom = 704.0
+theme = SubResource("Theme_0fjt0")
+placeholder_text = "Insère ton nom ici"
+alignment = 1
+
+[node name="SendToLeaderboard" type="Button" parent="." unique_id=2073380065]
+layout_mode = 0
+offset_left = 672.0
+offset_top = 632.0
+offset_right = 944.0
+offset_bottom = 696.0
+theme = SubResource("Theme_3ilyb")
+text = "Envoyer score"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=2073189125]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 128.0
+offset_right = 1152.0
+offset_bottom = 600.0
+theme = SubResource("Theme_fycm3")
+bbcode_enabled = true
+text = "[table=2]
+[cell expand][center]Slot Width/Height[/center][/cell][cell][right]2/1[/right][/cell]
+[cell expand][left]Family[/left][/cell][cell][right]Makarov[/right][/cell]
+[cell expand][left]TypeWeapon[/left][/cell][cell][right]Pistol[/right][/cell]
+[/table]"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="SendToLeaderboard" to="." method="_on_send_to_leaderboard_pressed"]
