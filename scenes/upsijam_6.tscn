@@ -7,9 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://cf21mrb64cp20" path="res://scenes/firezone/fire_zone.tscn" id="4_0bmqc"]
 [ext_resource type="PackedScene" uid="uid://ccb56340cgjvs" path="res://scenes/objects/rateau.tscn" id="5_hebbi"]
 [ext_resource type="PackedScene" uid="uid://fplijkr6kab2" path="res://scenes/objects/object_32px.tscn" id="5_o4ivr"]
-[ext_resource type="Texture2D" uid="uid://cigrlkcg0ou4v" path="res://assets/bottle_sprite.png" id="6_0q7t8"]
+[ext_resource type="Texture2D" uid="uid://cigrlkcg0ou4v" path="res://assets/sprites/bottle_sprite.png" id="6_l8yqd"]
+[ext_resource type="Texture2D" uid="uid://doqnipp5kx3xo" path="res://assets/sprites/ball.png" id="7_7rl7i"]
 [ext_resource type="Texture2D" uid="uid://cxyvclt411l26" path="res://assets/mouse.png" id="7_o4ivr"]
 [ext_resource type="AudioStream" uid="uid://x08jyisol8of" path="res://assets/music/game_upsijam6.2_1.mp3" id="9_0q7t8"]
+[ext_resource type="Texture2D" uid="uid://c3ol0nxpn7nh1" path="res://assets/sprites/cake-sprite.png" id="9_dmt4p"]
+[ext_resource type="Texture2D" uid="uid://byo1ovmm1kcsj" path="res://assets/sprites/can.png" id="10_oewny"]
+[ext_resource type="Texture2D" uid="uid://xd1tx68y85mu" path="res://assets/sprites/flamingo-sprite.png" id="11_oo272"]
+[ext_resource type="Texture2D" uid="uid://ck33evc47xopi" path="res://assets/sprites/pizza_sprite.png" id="12_y3hn5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bmqc"]
 size = Vector2(32, 32)
@@ -119,23 +124,51 @@ position = Vector2(569, 338)
 [node name="Rateau" parent="objects" unique_id=2074256559 instance=ExtResource("5_hebbi")]
 position = Vector2(396, 264)
 
-[node name="Bottle1" parent="objects" unique_id=2145525878 instance=ExtResource("3_0bmqc")]
+[node name="Bottle1" parent="objects" unique_id=2145525878 groups=["Object"] instance=ExtResource("3_0bmqc")]
+z_index = 1
 position = Vector2(340, 321)
-texture = ExtResource("6_0q7t8")
+texture = ExtResource("6_l8yqd")
 masse = 0.5
 
-[node name="Pizza1" parent="objects" unique_id=372562865 instance=ExtResource("5_o4ivr")]
-position = Vector2(389, 309)
-texture = ExtResource("8_l8yqd")
-masse = 2.0
-
-[node name="Bottle2" parent="objects" unique_id=486303983 instance=ExtResource("3_0bmqc")]
+[node name="Bottle2" parent="objects" unique_id=486303983 groups=["Object"] instance=ExtResource("3_0bmqc")]
+z_index = 1
 position = Vector2(376, 346)
-texture = ExtResource("6_0q7t8")
+texture = ExtResource("6_l8yqd")
 masse = 0.5
+
+[node name="Ball" parent="objects" unique_id=1129320847 groups=["Object"] instance=ExtResource("3_0bmqc")]
+z_index = 1
+texture = ExtResource("7_7rl7i")
+masse = 0.6
+
+[node name="Ball2" parent="objects" unique_id=1941880958 groups=["Object"] instance=ExtResource("3_0bmqc")]
+z_index = 1
+texture = ExtResource("7_7rl7i")
+masse = 0.6
+
+[node name="Cake" parent="objects" unique_id=580678175 groups=["Object"] instance=ExtResource("5_o4ivr")]
+z_index = 1
+texture = ExtResource("9_dmt4p")
+masse = 1.4000000000000001
+
+[node name="Can" parent="objects" unique_id=15602608 groups=["Object"] instance=ExtResource("3_0bmqc")]
+z_index = 1
+texture = ExtResource("10_oewny")
+masse = 0.6
+
+[node name="Flamingo" parent="objects" unique_id=1250579242 groups=["Object"] instance=ExtResource("5_o4ivr")]
+z_index = 1
+position = Vector2(360, 224)
+texture = ExtResource("11_oo272")
+masse = 0.5
+
+[node name="Pizza" parent="objects" unique_id=907379339 groups=["Object"] instance=ExtResource("5_o4ivr")]
+z_index = 1
+position = Vector2(288, 232)
+texture = ExtResource("12_y3hn5")
+masse = 1.2000000000000002
 
 [node name="Player" parent="." unique_id=2085354336 instance=ExtResource("2_qi026")]
-z_index = 5
 position = Vector2(440, 527)
 
 [node name="Camera" type="Camera2D" parent="Player" unique_id=456315949]
@@ -145,8 +178,8 @@ position_smoothing_enabled = true
 [node name="Tuto" type="Node" parent="." unique_id=533077238]
 
 [node name="Label4" type="Label" parent="Tuto" unique_id=1269388211]
-scale = Vector2(0.7, 0.7)
 texture_filter = 1
+scale = Vector2(0.7, 0.7)
 text = "Vite ! Je dois tout jeter au feu"
 label_settings = SubResource("LabelSettings_0q7t8")
 
