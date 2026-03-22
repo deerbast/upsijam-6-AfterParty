@@ -1,11 +1,5 @@
 extends Node2D
 
-#To remove for production xD
-func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.is_action_pressed("Restart"):
-		#get_tree().reload_current_scene()
-		get_tree().change_scene_to_file("res://scenes/ending/ending.tscn")
-
 func _ready() -> void:
 	#à activer !!
 	#pass
