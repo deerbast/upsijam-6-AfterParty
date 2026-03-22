@@ -442,6 +442,8 @@ size = Vector2(16, 28)
 
 [node name="Player" type="CharacterBody2D" unique_id=783921897 groups=["Player"]]
 z_index = 5
+collision_layer = 3
+collision_mask = 3
 motion_mode = 1
 floor_constant_speed = true
 script = ExtResource("1_4flbx")
