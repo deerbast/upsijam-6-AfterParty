@@ -8,7 +8,7 @@ func _ready() -> void:
 	$Sonnerie_MP3.play(0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _on_button_pressed() -> void:
@@ -18,7 +18,7 @@ func _on_button_pressed() -> void:
 	$MomAudio.play(0)
 	$ContinueButton.position = Vector2(488,512)
 	
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	$ContinueButton.disabled = false
 
 func _on_button_2_pressed() -> void:

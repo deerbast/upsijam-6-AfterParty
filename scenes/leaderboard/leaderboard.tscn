@@ -83,7 +83,7 @@ offset_right = 1152.0
 offset_bottom = 224.0
 theme = SubResource("Theme_fycm3")
 bbcode_enabled = true
-text = "[table=2][cell expand][center]  Username  [/center][/cell][cell][center] Score [/center][/cell][/table]"
+text = "[table=2][cell expand][center]  Nom      [/center][/cell][cell][center]  Score [/center][/cell][/table]"
 scroll_active = false
 horizontal_alignment = 1
 
