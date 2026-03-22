@@ -60,6 +60,7 @@ func player_grab_me(player: CharacterBody2D):
 	# Parent and collisions
 	reparent(player)
 	z_index = player.z_index + 1 # Draw above player
+	collider.disabled = true # Prevent colliding when grabbed
 	add_collision_exception_with(player)
 	player.add_collision_exception_with(self)
 	# Move object on top of grabber
@@ -71,6 +72,7 @@ func player_drop_me(player: CharacterBody2D):
 	# Remove from grabber
 	player.grabbed_object = null
 	reparent(_original_parent)
+	collider.disabled = false # Enable collider
 	# Drop velocity
 	var mouse_pos = get_global_mouse_position()
 	velocity += global_position.direction_to(mouse_pos) * DROP_FORCE
