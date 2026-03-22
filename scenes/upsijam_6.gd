@@ -18,6 +18,8 @@ func _ready() -> void:
 		if obj.is_in_group("Object"):
 			Global.total_possible_score += (obj.masse + 1) * 3 #Modifier 
 	$Player/CanvasLayer/ProgressBar.max_value = Global.total_possible_score
+	await get_tree().create_timer(4.4).timeout
+	$AudioStreamPlayer.play(0)
 
 func _process(_delta: float) -> void:
 	var time = 30
@@ -29,7 +31,6 @@ func _process(_delta: float) -> void:
 func _on_decompte_animation_finished(_anim_name: StringName) -> void:
 	#Game has started, player can move
 	$EndOfTime.start(30)
-	$AudioStreamPlayer.play(0)
 	#pass
 
 func _on_end_of_time_timeout() -> void:
