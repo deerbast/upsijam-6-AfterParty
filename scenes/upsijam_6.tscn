@@ -16,9 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://xd1tx68y85mu" path="res://assets/sprites/flamingo-sprite.png" id="11_oo272"]
 [ext_resource type="Texture2D" uid="uid://ck33evc47xopi" path="res://assets/sprites/pizza_sprite.png" id="12_y3hn5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0bmqc"]
-size = Vector2(32, 32)
-
 [sub_resource type="LabelSettings" id="LabelSettings_0q7t8"]
 font_size = 22
 
@@ -108,10 +105,7 @@ tile_map_data = PackedByteArray("AAAPAAsAAQAGAAEAAAAQAAsAAQAAAAEAAAARAAsAAQAAAAE
 tile_set = ExtResource("2_hebbi")
 
 [node name="FireZone" parent="map" unique_id=39517027 instance=ExtResource("4_0bmqc")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="map/FireZone" unique_id=50742738]
-position = Vector2(80, 176)
-shape = SubResource("RectangleShape2D_0bmqc")
+position = Vector2(488, 328)
 
 [node name="objects" type="Node" parent="." unique_id=418337554]
 

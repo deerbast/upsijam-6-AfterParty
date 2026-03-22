@@ -43,13 +43,12 @@ animations = [{
 size = Vector2(32, 29)
 
 [node name="FireZone" type="Area2D" unique_id=39517027]
-collision_mask = 2
 script = ExtResource("1_t5u7e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1168411215]
 sprite_frames = SubResource("SpriteFrames_gx5wo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=883322344]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1794998598]
 position = Vector2(0, 17.5)
 shape = SubResource("RectangleShape2D_8nw2a")
 
