@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://3dp7g3lucakp" path="res://assets/16x32 phone_button.png" id="3_fqhe4"]
 [ext_resource type="AudioStream" uid="uid://c2fnelec6438e" path="res://assets/music/ringtone.mp3" id="3_rlgmi"]
 [ext_resource type="Texture2D" uid="uid://8274sf5rqf5a" path="res://assets/16x32 phone_message.png" id="4_fqhe4"]
+[ext_resource type="Texture2D" uid="uid://634h1poggnk" path="res://assets/16x32 phone_button_pressed.png" id="4_m21wr"]
 
 [sub_resource type="Animation" id="Animation_qto6p"]
 length = 2.5
@@ -224,6 +225,7 @@ offset_bottom = 519.1428
 scale = Vector2(8.96, 8.96)
 theme = SubResource("Theme_m21wr")
 texture_normal = ExtResource("3_fqhe4")
+texture_hover = ExtResource("4_m21wr")
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="AnswerButton" unique_id=1753851155]
@@ -318,6 +320,7 @@ offset_bottom = 519.1428
 scale = Vector2(8.96, 8.96)
 theme = SubResource("Theme_m21wr")
 texture_normal = ExtResource("3_fqhe4")
+texture_hover = ExtResource("4_m21wr")
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="ContinueButton" unique_id=645562179]

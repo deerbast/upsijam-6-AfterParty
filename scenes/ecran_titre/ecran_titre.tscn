@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dn4dyaxajdqqn" path="res://assets/welcome_phone_with_gradient.png" id="2_m5shw"]
 [ext_resource type="AudioStream" uid="uid://bl1cq57yu7bxb" path="res://assets/music/title_music.mp3str" id="2_t63bs"]
 [ext_resource type="Texture2D" uid="uid://3dp7g3lucakp" path="res://assets/16x32 phone_button.png" id="3_02m2c"]
+[ext_resource type="Texture2D" uid="uid://634h1poggnk" path="res://assets/16x32 phone_button_pressed.png" id="4_02m2c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1f0px"]
 font_size = 51
@@ -15,6 +16,47 @@ default_font_size = 46
 [sub_resource type="LabelSettings" id="LabelSettings_m5shw"]
 line_spacing = 3.01
 font_size = 32
+
+[sub_resource type="Animation" id="Animation_m5shw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_02m2c"]
+resource_name = "new_animation"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.3, 1.3), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a73d8"]
+_data = {
+&"RESET": SubResource("Animation_m5shw"),
+&"new_animation": SubResource("Animation_02m2c")
+}
+
+[sub_resource type="Theme" id="Theme_pd8b1"]
+default_font_size = 30
 
 [node name="Ecran_titre" type="Node2D" unique_id=140822442]
 texture_filter = 2
@@ -47,6 +89,7 @@ offset_bottom = 367.14285
 scale = Vector2(8.96, 8.96)
 theme = SubResource("Theme_t63bs")
 texture_normal = ExtResource("3_02m2c")
+texture_hover = ExtResource("4_02m2c")
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="Start" unique_id=103179512]
@@ -70,6 +113,7 @@ offset_bottom = 447.14285
 scale = Vector2(8.96, 8.96)
 theme = SubResource("Theme_t63bs")
 texture_normal = ExtResource("3_02m2c")
+texture_hover = ExtResource("4_02m2c")
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="Quit" unique_id=1050941769]
@@ -88,6 +132,21 @@ horizontal_alignment = 1
 stream = ExtResource("2_t63bs")
 volume_db = 10.0
 autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1641967088]
+root_node = NodePath("../Label")
+libraries/ = SubResource("AnimationLibrary_a73d8")
+
+[node name="Label" type="Label" parent="." unique_id=120719568]
+offset_left = 696.0
+offset_right = 886.0
+offset_bottom = 42.0
+rotation = 0.715585
+theme = SubResource("Theme_pd8b1")
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 11
+text = "Avec du son !"
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
