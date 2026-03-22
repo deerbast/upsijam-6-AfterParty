@@ -144,11 +144,11 @@ label_settings = SubResource("LabelSettings_wijjp")
 
 [node name="Credits2" type="Label" parent="." unique_id=1961954932]
 layout_mode = 0
-offset_left = 305.0
-offset_top = 274.0
-offset_right = 900.0
-offset_bottom = 315.0
-text = "Tes parents te punisse d'une semaine de jeux vidéo"
+offset_left = 276.0
+offset_top = 273.0
+offset_right = 926.0
+offset_bottom = 314.0
+text = "Tes parents te punissent d'une semaine sans jeux vidéo!"
 label_settings = SubResource("LabelSettings_e0o6y")
 horizontal_alignment = 1
 
