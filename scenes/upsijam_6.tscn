@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1wpporgwdgrp" path="res://scenes/upsijam_6.gd" id="1_8plsc"]
 [ext_resource type="TileSet" uid="uid://nungx7pcilxn" path="res://assets/brownies_tile_set.tres" id="2_hebbi"]
-[ext_resource type="PackedScene" uid="uid://dxtkea2pyjqqi" path="res://scenes/Player/player.tscn" id="2_qi026"]
+[ext_resource type="PackedScene" uid="uid://dxtkea2pyjqqi" path="res://scenes/player/player.tscn" id="2_qi026"]
 [ext_resource type="PackedScene" uid="uid://jbiuyoklkws2" path="res://scenes/objects/object_16px.tscn" id="3_0bmqc"]
 [ext_resource type="PackedScene" uid="uid://cf21mrb64cp20" path="res://scenes/firezone/fire_zone.tscn" id="4_0bmqc"]
 [ext_resource type="PackedScene" uid="uid://ccb56340cgjvs" path="res://scenes/objects/rateau.tscn" id="5_hebbi"]
@@ -202,13 +202,14 @@ z_correction = 9
 z_index = 1
 position = Vector2(288, 232)
 texture = ExtResource("12_y3hn5")
-masse = 1.2000000000000002
+masse = 1.0
 z_correction = 10
 
 [node name="Pizza2" parent="objects" unique_id=1456588614 groups=["Object"] instance=ExtResource("5_o4ivr")]
 position = Vector2(849, 535)
 texture = ExtResource("13_4fnws")
 masse = 0.6
+z_correction = 10
 
 [node name="Bottle3" parent="objects" unique_id=882242289 groups=["Object"] instance=ExtResource("3_0bmqc")]
 position = Vector2(256, 143)
@@ -227,6 +228,7 @@ position = Vector2(824, 400)
 position = Vector2(480, 496)
 texture = ExtResource("13_4fnws")
 masse = 0.9
+z_correction = 10
 
 [node name="Player" parent="." unique_id=2085354336 instance=ExtResource("2_qi026")]
 position = Vector2(440, 527)
@@ -327,11 +329,6 @@ grow_vertical = 2
 text = "5"
 label_settings = SubResource("LabelSettings_l8yqd")
 horizontal_alignment = 1
-
-[node name="Object32px" parent="." unique_id=852810201 groups=["Object"] instance=ExtResource("5_o4ivr")]
-position = Vector2(485, 474)
-texture = ExtResource("13_4fnws")
-masse = 1.0
 
 [connection signal="timeout" from="EndOfTime" to="." method="_on_end_of_time_timeout"]
 [connection signal="animation_finished" from="Decompte" to="." method="_on_decompte_animation_finished"]

@@ -42,7 +42,7 @@ func apply_impact(impact_velocity: Vector2) -> void:
 	velocity += impact_velocity
 
 func player_grab_me(player: CharacterBody2D):
-	print(player, " grabs ", self)
+	print(player, " grabs ", self, " (", self.name, ")")
 	# Configure grab
 	player.grabbed_object = self
 	_grabbed_by = player

@@ -33,11 +33,12 @@ func _speed_modifier() -> float:
 	if grabbed_object != null:
 		speed = (3 - grabbed_object.masse) * 0.3
 	speed *= push_slow_factor
+	#print("push_slow_factor ", push_slow_factor, " speed ", speed)
 	return speed
 
 func update_push_slow_factor(_delta: float) -> void:
-	# Reset progressively to 1.0
-	push_slow_factor = move_toward(push_slow_factor, 1.0, _delta * 2.0)
+	# Reset progressively to 1.0, 0.0 - 1.0 in 0.1s
+	push_slow_factor = move_toward(push_slow_factor, 1.0, _delta * 10.0)
 	for i in get_slide_collision_count():
 		var collision := get_slide_collision(i)
 		var body := collision.get_collider() as MovableObject
@@ -45,6 +46,7 @@ func update_push_slow_factor(_delta: float) -> void:
 			var factor = body.masse / 2.0 # [0.05 - 1.0]
 			factor *= PUSH_FORCE
 			push_slow_factor = min(push_slow_factor, factor)
+			#print("Collide with ", body, " ", body.name)
 
 func _update_animation():
 	var velo = velocity
