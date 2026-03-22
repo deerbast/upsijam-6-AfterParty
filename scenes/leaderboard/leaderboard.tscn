@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dowxse7iu1qie"]
 
 [ext_resource type="Script" uid="uid://cha2xoauh48yp" path="res://scenes/leaderboard/leaderboard.gd" id="1_b6xng"]
+[ext_resource type="Texture2D" uid="uid://cmohosexe1k1a" path="res://assets/background.png" id="2_q1831"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0fjt0"]
 font_size = 107
@@ -14,6 +15,9 @@ default_font_size = 31
 [sub_resource type="Theme" id="Theme_fycm3"]
 default_font_size = 57
 
+[sub_resource type="Theme" id="Theme_q1831"]
+default_font_size = 46
+
 [node name="Control" type="Control" unique_id=1151109522]
 layout_mode = 3
 anchors_preset = 15
@@ -24,30 +28,37 @@ grow_vertical = 2
 script = ExtResource("1_b6xng")
 metadata/_edit_vertical_guides_ = [600.0]
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2110834711]
+layout_mode = 0
+offset_right = 1200.0
+offset_bottom = 720.0
+texture = ExtResource("2_q1831")
+
 [node name="Bravo" type="Label" parent="." unique_id=1987908803]
 layout_mode = 0
 offset_left = 270.0
 offset_top = 2.0
 offset_right = 933.0
 offset_bottom = 149.0
-text = "Leaderboard"
+text = "Classement"
 label_settings = SubResource("LabelSettings_0fjt0")
+horizontal_alignment = 1
 
 [node name="PlayerName" type="LineEdit" parent="." unique_id=616410776]
 layout_mode = 0
-offset_left = 160.0
-offset_top = 624.0
-offset_right = 568.0
-offset_bottom = 704.0
+offset_left = 166.0
+offset_top = 623.0
+offset_right = 574.0
+offset_bottom = 703.0
 theme = SubResource("Theme_0fjt0")
 placeholder_text = "Insère ton nom ici"
 alignment = 1
 
 [node name="SendToLeaderboard" type="Button" parent="." unique_id=2073380065]
 layout_mode = 0
-offset_left = 672.0
+offset_left = 628.0
 offset_top = 632.0
-offset_right = 944.0
+offset_right = 900.0
 offset_bottom = 696.0
 theme = SubResource("Theme_3ilyb")
 text = "Envoyer score"
@@ -62,4 +73,14 @@ theme = SubResource("Theme_fycm3")
 bbcode_enabled = true
 horizontal_alignment = 1
 
+[node name="Button" type="Button" parent="." unique_id=1440381640]
+layout_mode = 0
+offset_left = 964.0
+offset_top = 617.0
+offset_right = 1172.0
+offset_bottom = 697.0
+theme = SubResource("Theme_q1831")
+text = "Rejouer"
+
 [connection signal="pressed" from="SendToLeaderboard" to="." method="_on_send_to_leaderboard_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
