@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cha2xoauh48yp" path="res://scenes/leaderboard/leaderboard.gd" id="1_b6xng"]
 [ext_resource type="Texture2D" uid="uid://cmohosexe1k1a" path="res://assets/background.png" id="2_q1831"]
+[ext_resource type="Texture2D" uid="uid://d3fl87abs40vi" path="res://assets/refresh.png" id="3_1epml"]
+[ext_resource type="Texture2D" uid="uid://c3v18y08svpjd" path="res://assets/refresh_pressed.png" id="4_x3ryb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0fjt0"]
 font_size = 107
@@ -66,14 +68,16 @@ offset_bottom = 696.0
 theme = SubResource("Theme_3ilyb")
 text = "Envoyer score"
 
-[node name="Refresh" type="Button" parent="." unique_id=876498055]
+[node name="Refresh" type="TextureButton" parent="." unique_id=1022369152]
 layout_mode = 0
-offset_left = 1016.0
-offset_top = 16.0
-offset_right = 1136.0
-offset_bottom = 137.0
+offset_left = 1008.0
+offset_top = 40.000004
+offset_right = 2192.0
+offset_bottom = 1224.0
+scale = Vector2(0.09, 0.09)
 theme = SubResource("Theme_b6xng")
-text = "⟳"
+texture_normal = ExtResource("3_1epml")
+texture_hover = ExtResource("4_x3ryb")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1667625620]
 layout_mode = 0
