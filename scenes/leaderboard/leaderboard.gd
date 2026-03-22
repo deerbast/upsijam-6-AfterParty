@@ -11,15 +11,19 @@ func _on_send_to_leaderboard_pressed() -> void:
 		update_leaderboard()
 		
 func _ready() -> void:
+	await get_tree().create_timer(1).timeout
 	update_leaderboard()
 	
 func update_leaderboard() -> void:
 	var sw_result: Dictionary = await SilentWolf.Scores.get_scores(0).sw_get_scores_complete
-	var leaderboard = "[table=2][cell expand][center]  Nom  [/center][/cell][cell][center] Score [/center][/cell]"
+	var leaderboard = "[table=2]"
 	for score in sw_result.scores:
 		leaderboard += "[cell expand][center] %s [/center][/cell][cell][center] %s%% [/center][/cell]" % [score.player_name, score.score]
 	leaderboard += "[/table]"
 	$RichTextLabel.text = leaderboard
+
+func _on_refresh_pressed() -> void:
+	update_leaderboard()
 
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/upsijam_6.tscn")
