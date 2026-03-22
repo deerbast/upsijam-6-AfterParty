@@ -20,8 +20,6 @@ func _ready() -> void:
 		if obj.is_in_group("Object"):
 			Global.total_possible_score += (obj.masse + 1) * 3 #Modifier 
 	$Player/CanvasLayer/ProgressBar.max_value = Global.total_possible_score
-	await get_tree().create_timer(4.4).timeout
-	$AudioStreamPlayer.play(0)
 
 func _process(_delta: float) -> void:
 	var time = 30
@@ -34,6 +32,15 @@ func _on_decompte_animation_finished(_anim_name: StringName) -> void:
 	#Game has started, player can move
 	$EndOfTime.start(30)
 	#pass
+	
+func on_decompte_beep():
+	$BeepPlayer.play()
+	
+func on_decompte_beep_final():
+	$BeepFinal.play()
+	
+func on_start_music():
+	$AudioStreamPlayer.play(0)
 
 func _on_end_of_time_timeout() -> void:
 	get_tree().change_scene_to_file("res://scenes/ending/ending.tscn")
