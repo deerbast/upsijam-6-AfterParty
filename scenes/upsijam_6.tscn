@@ -257,6 +257,12 @@ text = "30s"
 label_settings = SubResource("LabelSettings_y3hn5")
 horizontal_alignment = 1
 
+[node name="ProgressBar" type="ProgressBar" parent="Player/CanvasLayer" unique_id=1433247894]
+offset_left = 110.98
+offset_top = 16.0
+offset_right = 398.98
+offset_bottom = 56.0
+
 [node name="Tuto" type="Node" parent="." unique_id=533077238]
 
 [node name="Label4" type="Label" parent="Tuto" unique_id=1269388211]
