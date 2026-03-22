@@ -332,7 +332,6 @@ label_settings = SubResource("LabelSettings_xyyut")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1338462404]
 stream = ExtResource("9_0q7t8")
 volume_db = -3.0
-autoplay = true
 
 [node name="EndOfTime" type="Timer" parent="." unique_id=527267681]
 
