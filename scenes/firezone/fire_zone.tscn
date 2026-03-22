@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://gx7l1ryxvu3u" path="res://scenes/firezone/fire_zone.gd" id="1_t5u7e"]
 [ext_resource type="Texture2D" uid="uid://rmx0f4pgiyg5" path="res://assets/sprites/32x64 fire_idle.png" id="2_8nw2a"]
 [ext_resource type="AudioStream" uid="uid://cr5icx3acjm1g" path="res://assets/music/burn.mp3" id="3_jlnk6"]
+[ext_resource type="AudioStream" uid="uid://texwwowtqfk4" path="res://assets/music/fire_ambient.mp3" id="4_70p5t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jlnk6"]
 atlas = ExtResource("2_8nw2a")
@@ -58,10 +59,6 @@ sprite_frames = SubResource("SpriteFrames_gx5wo")
 position = Vector2(0, 17.5)
 shape = SubResource("CircleShape2D_jlnk6")
 
-[node name="Burn" type="AudioStreamPlayer" parent="." unique_id=1924810951]
-stream = ExtResource("3_jlnk6")
-volume_db = 10.0
-
 [node name="PlayerKeepout" type="StaticBody2D" parent="." unique_id=1473314953]
 collision_layer = 2
 collision_mask = 2
@@ -69,5 +66,16 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerKeepout" unique_id=2026386641]
 position = Vector2(0, 28)
 shape = SubResource("CapsuleShape2D_jlnk6")
+
+[node name="Burn" type="AudioStreamPlayer" parent="PlayerKeepout" unique_id=1924810951]
+stream = ExtResource("3_jlnk6")
+volume_db = 10.0
+
+[node name="Ambient" type="AudioStreamPlayer2D" parent="." unique_id=1204771043]
+stream = ExtResource("4_70p5t")
+volume_db = 6.0
+autoplay = true
+max_distance = 1200.0
+attenuation = 15.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
