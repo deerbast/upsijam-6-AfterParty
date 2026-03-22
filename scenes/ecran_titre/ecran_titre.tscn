@@ -31,11 +31,10 @@ texture = ExtResource("2_m5shw")
 
 [node name="Titre" type="Label" parent="." unique_id=1928740058]
 offset_left = 466.0
-offset_top = 106.0
+offset_top = 138.0
 offset_right = 733.0
-offset_bottom = 249.0
-text = "Afterparty
-69"
+offset_bottom = 281.0
+text = "Afterparty"
 label_settings = SubResource("LabelSettings_1f0px")
 horizontal_alignment = 1
 
