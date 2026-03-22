@@ -29,12 +29,12 @@ func _physics_process(_delta: float) -> void:
 	emit_signal("player_moved")
 	
 func _speed_modifier() -> float:
-	var speed = 1.0
+	var s = 1.0
 	if grabbed_object != null:
-		speed = (3 - grabbed_object.masse) * 0.3
-	speed *= push_slow_factor
+		s = (3 - grabbed_object.masse) * 0.3
+	s *= push_slow_factor
 	#print("push_slow_factor ", push_slow_factor, " speed ", speed)
-	return speed
+	return s
 
 func update_push_slow_factor(_delta: float) -> void:
 	# Reset progressively to 1.0, 0.0 - 1.0 in 0.1s
