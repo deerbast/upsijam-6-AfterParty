@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1wpporgwdgrp" path="res://scenes/upsijam_6.gd" id="1_8plsc"]
 [ext_resource type="TileSet" uid="uid://nungx7pcilxn" path="res://assets/brownies_tile_set.tres" id="2_hebbi"]
-[ext_resource type="PackedScene" uid="uid://dxtkea2pyjqqi" path="res://scenes/Player/player.tscn" id="2_qi026"]
+[ext_resource type="PackedScene" uid="uid://dxtkea2pyjqqi" path="res://scenes/player/player.tscn" id="2_qi026"]
 [ext_resource type="PackedScene" uid="uid://jbiuyoklkws2" path="res://scenes/objects/object_16px.tscn" id="3_0bmqc"]
 [ext_resource type="PackedScene" uid="uid://cf21mrb64cp20" path="res://scenes/firezone/fire_zone.tscn" id="4_0bmqc"]
 [ext_resource type="PackedScene" uid="uid://ccb56340cgjvs" path="res://scenes/objects/rateau.tscn" id="5_hebbi"]
