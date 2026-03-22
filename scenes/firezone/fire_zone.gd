@@ -2,11 +2,13 @@ extends Area2D
 
 const BURN_S = 0.4
 
-@onready var burnout = $BurnAnim
+@onready var fireplace = $AnimatedSprite2D
 
 func _ready() -> void:
-	$AnimatedSprite2D.play("default")
-	burnout.visible = false
+	fireplace.play("fire")
+
+func _on_fire_anim_finished() -> void:
+	fireplace.play("fire")
 
 # Will delete every body on the same layer!
 func _on_body_entered(body: Node2D) -> void:
@@ -16,11 +18,10 @@ func _on_body_entered(body: Node2D) -> void:
 		burn_object(body)
 		
 func burn_object(body: Node2D) -> void:
-	if not is_instance_valid(body):
-		return
+	if not is_instance_valid(body): return
 	$Burn.play()
-	burnout.visible = true
-	burnout.play("burnout")
+	var anim = "burn" + ("-smoke" if randf() < 0.5 else "")
+	fireplace.play(anim)
 	var tween = create_tween()
 	tween.parallel().tween_property(body, "global_position", global_position, BURN_S)
 	tween.parallel().tween_property(body, "scale", Vector2(0.1, 0.1), BURN_S)
@@ -28,6 +29,3 @@ func burn_object(body: Node2D) -> void:
 	tween.parallel().tween_property(body, "rotation", randf_range(-1, 1), BURN_S)
 	await tween.finished
 	if is_instance_valid(body): body.queue_free()
-
-func _on_burnout_anim_finished() -> void:
-	burnout.visible = false

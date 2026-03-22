@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rmx0f4pgiyg5"
-path="res://.godot/imported/32x64 fire_idle.png-0db23500e17e9c6855fc0a4a907e6a90.ctex"
+uid="uid://ct4gi05r7ik6n"
+path="res://.godot/imported/32x64_fire_idle.png-0796e544c221149cfbe122893367f76a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/32x64 fire_idle.png"
-dest_files=["res://.godot/imported/32x64 fire_idle.png-0db23500e17e9c6855fc0a4a907e6a90.ctex"]
+source_file="res://assets/sprites/32x64_fire_idle.png"
+dest_files=["res://.godot/imported/32x64_fire_idle.png-0796e544c221149cfbe122893367f76a.ctex"]
 
 [params]
 
