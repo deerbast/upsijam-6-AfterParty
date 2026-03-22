@@ -75,14 +75,13 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.is_action_pressed("Dash") and dash.can_dash:
 		dashing = true
 		speed = SPEED_DASH
+		$Dash.play(0)
 		dash.dash()
 
 func _on_dash_finished() -> void:
 	dashing = false
 	speed = SPEED_RUN
-	$Dash.play(0)
 
-			
 func blocked(time: float) -> void:
 	speed = 0
 	$BlockTimer.start(time)
