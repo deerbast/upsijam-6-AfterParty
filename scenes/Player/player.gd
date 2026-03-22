@@ -17,6 +17,7 @@ var grabbed_object: MovableObject = null
 @onready var sprite = $AnimatedSprite2D
 @onready var dash = $DashTimer
 @onready var sprites = $AnimatedSprite2D
+@onready var block_timer = $BlockTimer
 
 func _physics_process(_delta: float) -> void:
 	var direction := Input.get_vector("Left", "Right", "Up", "Down")
@@ -72,7 +73,9 @@ func _update_animation():
 			sprite.play(prefix+dir+suffix)
 	
 func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.is_action_pressed("Dash") and dash.can_dash:
+	if event is InputEventKey and\
+	event.is_action_pressed("Dash") and dash.can_dash and\
+	block_timer.is_stopped():
 		dashing = true
 		speed = SPEED_DASH
 		$Dash.play(0)
@@ -84,7 +87,7 @@ func _on_dash_finished() -> void:
 
 func blocked(time: float) -> void:
 	speed = 0
-	$BlockTimer.start(time)
+	block_timer.start(time)
 
 func _on_block_timer_timeout() -> void:
 	speed = SPEED_RUN

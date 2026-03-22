@@ -456,6 +456,7 @@ sprite_frames = SubResource("SpriteFrames_yj68g")
 animation = &"dash-right-obj"
 
 [node name="BlockTimer" type="Timer" parent="." unique_id=783402733]
+one_shot = true
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1431942185]
 position = Vector2(0, 12.5)
