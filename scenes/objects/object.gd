@@ -2,9 +2,8 @@ class_name MovableObject
 extends CharacterBody2D
 
 # Object constants
-const DROP_FORCE = 100
-const FLOOR_FRICTION = 200.0
-const IMPACT := 0.5
+const DROP_FORCE = 200
+const FLOOR_FRICTION = 400.0
 
 var _original_parent: Node
 var _grabbed_by: CharacterBody2D = null # Player grabbing the object
@@ -17,7 +16,7 @@ var _pickup_height = 10
 		if has_node("Sprite2D"):
 			$Sprite2D.texture = value
 			_pickup_height = $Sprite2D.texture.get_width()
-			_pickup_distance = $Sprite2D.texture.get_width() * 1.8
+			_pickup_distance = $Sprite2D.texture.get_width() * 1.5
 			print("Set pickup distance of ", _pickup_distance, "for tex ", $Sprite2D.texture)
 			
 @export_range(0.1, 2.0, 0.1, "Masse") var masse := 0.1
@@ -30,8 +29,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	velocity = velocity.move_toward(Vector2.ZERO, FLOOR_FRICTION * delta * masse)
-	if move_and_slide():
-		resolve_collisions()
+	move_and_slide()
 	
 	# Set back collisions with player once out of range
 	if _grabbed_by != null and\
@@ -41,17 +39,7 @@ func _physics_process(delta: float) -> void:
 		reset_object_state()
 	
 func apply_impact(impact_velocity: Vector2) -> void:
-	velocity += (impact_velocity - velocity) * IMPACT / masse
-	
-func resolve_collisions() -> void:
-	for i in get_slide_collision_count():
-		var collision := get_slide_collision(i)
-		var impact_velocity := velocity
-		velocity -= velocity.project(collision.get_normal())
-
-		var body := collision.get_collider() as MovableObject
-		if body:
-			body.apply_impact(impact_velocity)
+	velocity += impact_velocity
 
 func player_grab_me(player: CharacterBody2D):
 	print(player, " grabs ", self)
@@ -77,7 +65,7 @@ func player_drop_me(player: CharacterBody2D):
 	collider.disabled = false # Enable collider
 	# Drop velocity
 	var mouse_pos = get_global_mouse_position()
-	velocity += global_position.direction_to(mouse_pos) * DROP_FORCE
+	apply_impact(global_position.direction_to(mouse_pos) * DROP_FORCE)
 	# Collisions are set back once colliders are out 
 	
 func reset_object_state():

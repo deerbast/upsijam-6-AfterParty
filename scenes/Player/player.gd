@@ -5,9 +5,11 @@ signal player_moved
 # Player constants
 const SPEED_RUN = 80
 const SPEED_DASH = 250
+const PUSH_FORCE = 0.5
 
 # Runtime states
 var speed = SPEED_RUN
+var push_slow_factor = 1.0
 var dashing: bool = false
 var grabbed_object: MovableObject = null
 
@@ -19,21 +21,37 @@ var grabbed_object: MovableObject = null
 func _physics_process(_delta: float) -> void:
 	var direction := Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = direction * speed * _speed_modifier()
-	if move_and_slide(): resolve_collisions()
+	
+	move_and_slide()
+	update_push_slow_factor(_delta)
+		
 	_update_animation()
 	emit_signal("player_moved")
 	
 func _speed_modifier() -> float:
+	var speed = 1.0
 	if grabbed_object != null:
-		return (3 - grabbed_object.masse) * 0.3
-	return 1
+		speed = (3 - grabbed_object.masse) * 0.3
+	speed *= push_slow_factor
+	return speed
+
+func update_push_slow_factor(_delta: float) -> void:
+	# Reset progressively to 1.0
+	push_slow_factor = move_toward(push_slow_factor, 1.0, _delta * 2.0)
+	for i in get_slide_collision_count():
+		var collision := get_slide_collision(i)
+		var body := collision.get_collider() as MovableObject
+		if body and velocity.dot(-collision.get_normal()) > 0.0:
+			var factor = body.masse / 2.0 # [0.05 - 1.0]
+			factor *= PUSH_FORCE
+			push_slow_factor = min(push_slow_factor, factor)
 
 func _update_animation():
 	var velo = velocity
 	var prefix = "dash-" if dashing else "run-"
 	var suffix = "" if grabbed_object == null else "-obj"
 
-	if velo.length() < (SPEED_RUN * 0.1):
+	if velo.length() < 1.0:
 		# No movement
 		sprite.play("idle"+suffix)
 		sprites.speed_scale = 1.0
@@ -62,13 +80,6 @@ func _on_dash_finished() -> void:
 	speed = SPEED_RUN
 	$Dash.play(0)
 
-# Apply force onto object
-func resolve_collisions() -> void:
-	for i in get_slide_collision_count():
-		var collision := get_slide_collision(i)
-		var body := collision.get_collider() as MovableObject
-		if body:
-			body.apply_impact(velocity)
 			
 func blocked(time: float) -> void:
 	speed = 0

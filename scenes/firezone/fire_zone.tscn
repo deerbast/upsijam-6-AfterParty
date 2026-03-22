@@ -55,5 +55,6 @@ shape = SubResource("RectangleShape2D_8nw2a")
 
 [node name="Burn" type="AudioStreamPlayer" parent="." unique_id=1924810951]
 stream = ExtResource("3_jlnk6")
+volume_db = 10.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
