@@ -1,68 +1,70 @@
 [gd_scene format=3 uid="uid://c1ldoduhvxwkl"]
 
 [ext_resource type="Script" uid="uid://bg4lpq4xre4vl" path="res://scenes/phone/phone.gd" id="1_btltj"]
-[ext_resource type="Texture2D" uid="uid://dx1facxn858dj" path="res://assets/phone.png" id="2_rlgmi"]
+[ext_resource type="Texture2D" uid="uid://mrtck2pt5dsg" path="res://assets/welcome_phone.png" id="2_5v2va"]
 [ext_resource type="AudioStream" uid="uid://mkdgs1x2r6f0" path="res://assets/music/mom.mp3" id="3_1aovg"]
+[ext_resource type="Texture2D" uid="uid://3dp7g3lucakp" path="res://assets/16x32 phone_button.png" id="3_fqhe4"]
 [ext_resource type="AudioStream" uid="uid://c2fnelec6438e" path="res://assets/music/ringtone.mp3" id="3_rlgmi"]
+[ext_resource type="Texture2D" uid="uid://8274sf5rqf5a" path="res://assets/16x32 phone_message.png" id="4_fqhe4"]
 
 [sub_resource type="Animation" id="Animation_qto6p"]
 length = 2.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Button:size")
+tracks/0/path = NodePath("Label:self_modulate:a")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(1, 1.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(200, 56), Vector2(13, 56)]
+"values": [1.0, 0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Button:position")
+tracks/1/path = NodePath("Label3:self_modulate:a")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(1.3, 1.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(496, 544), Vector2(683, 544)]
+"values": [0.0, 1.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Button:self_modulate:a")
+tracks/2/path = NodePath("TextureRect2:self_modulate:a")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1, 1.3),
-"transitions": PackedFloat32Array(1, 0.65975356),
+"times": PackedFloat32Array(1.3, 1.7),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [1.0, 0.0]
+"values": [0.0, 1.0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Label:self_modulate:a")
+tracks/3/path = NodePath("TextureRect2/Label2:self_modulate:a")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(1, 1.3),
+"times": PackedFloat32Array(1.3, 1.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [1.0, 0.0]
+"values": [0.0, 1.0]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Label3:self_modulate:a")
+tracks/4/path = NodePath("TextureRect3:self_modulate:a")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(1.3, 1.6),
+"times": PackedFloat32Array(1.6, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -70,118 +72,84 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("TextureRect2:self_modulate:a")
+tracks/5/path = NodePath("TextureRect3/Label2:self_modulate:a")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(1.3, 1.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("TextureRect2/Label2:self_modulate:a")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(1.3, 1.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("TextureRect3:self_modulate:a")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
 "times": PackedFloat32Array(1.6, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TextureRect2:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(176.00003, -0.25, 0, 0.25, 0, 450, -0.06666666, -48.999992, 0, 0),
+"times": PackedFloat32Array(1.3333334, 1.7)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TextureRect3:position:x")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(175.00002, -0.25, 0, 0.25, 0, 450, 0, -19.217, 0, 0),
+"times": PackedFloat32Array(1.6000001, 2)
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("TextureRect3/Label2:self_modulate:a")
+tracks/8/path = NodePath("Label2:self_modulate:a")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(1.6, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/9/type = "bezier"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("TextureRect2:position:x")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(176.00003, -0.25, 0, 0.25, 0, 470, -0.06666666, -48.999992, 0, 0),
-"times": PackedFloat32Array(1.3333334, 1.7)
-}
-tracks/10/type = "bezier"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("TextureRect2:position:y")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(88, -0.25, 0, 0.25, 0, 88.00001, -0.06666666, -1.2715658e-06, 0, 0),
-"times": PackedFloat32Array(1.3000001, 1.7)
-}
-tracks/11/type = "bezier"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("TextureRect3:position:x")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(175.00002, -0.25, 0, 0.25, 0, 467.00003, -0.06666665, -48.666668, 0, 0),
-"times": PackedFloat32Array(1.6000001, 2)
-}
-tracks/12/type = "bezier"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("TextureRect3:position:y")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(194.00002, -0.25, 0, 0.25, 0, 192.00002, -0.06666665, 0.33333337, 0, 0),
-"times": PackedFloat32Array(1.6000001, 2)
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("Button2:self_modulate:a")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(2.1, 2.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("Label2:self_modulate:a")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
 "times": PackedFloat32Array(1, 1.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [1.0, 0.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AnswerButton:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(8.96, 8.96), Vector2(0, 8.96)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("ContinueButton:self_modulate:a")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(2, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("ContinueButton/Label:self_modulate:a")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(2, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_btltj"]
@@ -192,21 +160,23 @@ _data = {
 [sub_resource type="LabelSettings" id="LabelSettings_5v2va"]
 font_size = 22
 
+[sub_resource type="Theme" id="Theme_m21wr"]
+default_base_scale = 0.69
+default_font_size = 46
+
+[sub_resource type="LabelSettings" id="LabelSettings_jnnxy"]
+line_spacing = 3.01
+font_size = 32
+
 [sub_resource type="FontVariation" id="FontVariation_btltj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1aovg"]
 font = SubResource("FontVariation_btltj")
 font_size = 35
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kby2p"]
-load_path = "res://.godot/imported/message.png-83e728df3b8d1773d4ca5f048cf12332.ctex"
-
 [sub_resource type="LabelSettings" id="LabelSettings_btltj"]
 font_size = 40
 font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_btltj"]
-load_path = "res://.godot/imported/message.png-83e728df3b8d1773d4ca5f048cf12332.ctex"
 
 [sub_resource type="LabelSettings" id="LabelSettings_rlgmi"]
 font_size = 40
@@ -227,12 +197,10 @@ libraries/ = SubResource("AnimationLibrary_btltj")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=420158233]
 layout_mode = 0
-offset_left = 429.99997
-offset_top = 7.9999995
-offset_right = 1849.0
-offset_bottom = 2804.0
-scale = Vector2(0.24, 0.24)
-texture = ExtResource("2_rlgmi")
+offset_right = 120.00003
+offset_bottom = 72.0
+scale = Vector2(10, 10)
+texture = ExtResource("2_5v2va")
 
 [node name="Label2" type="Label" parent="." unique_id=294928989]
 layout_mode = 0
@@ -246,15 +214,30 @@ appelle
 label_settings = SubResource("LabelSettings_5v2va")
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="." unique_id=1986191900]
+[node name="AnswerButton" type="TextureButton" parent="." unique_id=311162437]
+texture_filter = 1
 layout_mode = 0
-offset_left = 496.0
-offset_top = 544.0
-offset_right = 696.0
-offset_bottom = 600.0
-text = "Slide to answer"
+offset_left = 488.0
+offset_top = 512.0
+offset_right = 513.0
+offset_bottom = 519.1428
+scale = Vector2(8.96, 8.96)
+theme = SubResource("Theme_m21wr")
+texture_normal = ExtResource("3_fqhe4")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="AnswerButton" unique_id=1753851155]
+texture_filter = 3
+layout_mode = 0
+offset_left = 0.8928528
+offset_top = 0.66973877
+offset_right = 236.89285
+offset_bottom = 51.6221
+scale = Vector2(0.095, 0.095)
+text = "Click to answer"
+label_settings = SubResource("LabelSettings_jnnxy")
+horizontal_alignment = 1
 text_overrun_behavior = 1
-autowrap_trim_flags = 0
 
 [node name="Label" type="Label" parent="." unique_id=763562941]
 layout_mode = 0
@@ -283,19 +266,20 @@ vertical_alignment = 1
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 176.00003
-offset_top = 88.0
-offset_right = 1016.00024
-offset_bottom = 947.0
-scale = Vector2(0.4, 0.4)
-texture = SubResource("CompressedTexture2D_kby2p")
+offset_top = 145.04
+offset_right = 208.00003
+offset_bottom = 161.04001
+scale = Vector2(9.53, 9.53)
+texture = ExtResource("4_fqhe4")
 
 [node name="Label2" type="Label" parent="TextureRect2" unique_id=913819111]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 59.99991
-offset_top = 260.0
-offset_right = 619.9999
-offset_bottom = 547.0
+offset_left = 5.511018
+offset_top = 4.1972713
+offset_right = 605.1213
+offset_bottom = 233.19727
+scale = Vector2(0.035, 0.035)
 text = "Hello chéri,
 on va rentrer des vacances dans 30 secondes."
 label_settings = SubResource("LabelSettings_btltj")
@@ -305,32 +289,50 @@ autowrap_mode = 2
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 175.00002
-offset_top = 194.00002
-offset_right = 1015.00024
-offset_bottom = 1053.0001
-scale = Vector2(0.4, 0.4)
-texture = SubResource("CompressedTexture2D_btltj")
+offset_top = 284.858
+offset_right = 207.00002
+offset_bottom = 300.85803
+scale = Vector2(9.53, 9.53)
+texture = ExtResource("4_fqhe4")
 
 [node name="Label2" type="Label" parent="TextureRect3" unique_id=1569819232]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 59.99991
-offset_top = 260.0
-offset_right = 619.9999
-offset_bottom = 547.0
+offset_left = 7.2402954
+offset_top = 4.5269685
+offset_right = 489.92657
+offset_bottom = 151.43144
+scale = Vector2(0.035, 0.035)
 text = "J'espère que tu as bien nettoyé le jardin."
 label_settings = SubResource("LabelSettings_rlgmi")
 autowrap_mode = 2
 
-[node name="Button2" type="Button" parent="." unique_id=1879344375]
+[node name="ContinueButton" type="TextureButton" parent="." unique_id=1600745547]
 self_modulate = Color(1, 1, 1, 0)
+texture_filter = 1
 layout_mode = 0
-offset_left = 520.0
-offset_top = 560.0
-offset_right = 599.0
-offset_bottom = 591.0
-scale = Vector2(1.73, 1.73)
-text = "Continue"
+offset_left = 488.0
+offset_top = 512.0
+offset_right = 513.0
+offset_bottom = 519.1428
+scale = Vector2(8.96, 8.96)
+theme = SubResource("Theme_m21wr")
+texture_normal = ExtResource("3_fqhe4")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="ContinueButton" unique_id=645562179]
+self_modulate = Color(1, 1, 1, 0)
+texture_filter = 3
+layout_mode = 0
+offset_left = 0.8928528
+offset_top = 0.66973877
+offset_right = 236.89285
+offset_bottom = 51.6221
+scale = Vector2(0.095, 0.095)
+text = "Continuer"
+label_settings = SubResource("LabelSettings_jnnxy")
+horizontal_alignment = 1
+text_overrun_behavior = 1
 
 [node name="Sonnerie_MP3" type="AudioStreamPlayer" parent="." unique_id=2088328673]
 stream = ExtResource("3_rlgmi")
@@ -341,6 +343,6 @@ stream = ExtResource("3_1aovg")
 volume_db = 16.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="AnswerButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ContinueButton" to="." method="_on_button_2_pressed"]
 [connection signal="finished" from="Sonnerie_MP3" to="." method="_on_sonnerie_mp_3_finished"]

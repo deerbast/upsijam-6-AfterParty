@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://d2i0pue6vih2b"]
 
 [ext_resource type="Script" uid="uid://ceyd4nd0fa2ij" path="res://scenes/ecran_titre/ecran_titre.gd" id="1_1f0px"]
-[ext_resource type="Texture2D" uid="uid://dx1facxn858dj" path="res://assets/phone.png" id="2_l42cm"]
+[ext_resource type="Texture2D" uid="uid://dn4dyaxajdqqn" path="res://assets/welcome_phone_with_gradient.png" id="2_m5shw"]
 [ext_resource type="AudioStream" uid="uid://bl1cq57yu7bxb" path="res://assets/music/title_music.mp3str" id="2_t63bs"]
+[ext_resource type="Texture2D" uid="uid://3dp7g3lucakp" path="res://assets/16x32 phone_button.png" id="3_02m2c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1f0px"]
 font_size = 51
@@ -11,8 +12,9 @@ font_size = 51
 default_base_scale = 0.69
 default_font_size = 46
 
-[sub_resource type="Theme" id="Theme_1f0px"]
-default_font_size = 57
+[sub_resource type="LabelSettings" id="LabelSettings_m5shw"]
+line_spacing = 3.01
+font_size = 32
 
 [node name="Ecran_titre" type="Node2D" unique_id=140822442]
 texture_filter = 2
@@ -21,12 +23,11 @@ metadata/_edit_vertical_guides_ = [600.0, 1200.0]
 metadata/_edit_horizontal_guides_ = [360.0, 720.0]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1645548388]
-offset_left = 428.99997
-offset_top = 6.999999
-offset_right = 1848.0
-offset_bottom = 2803.0
-scale = Vector2(0.24, 0.24)
-texture = ExtResource("2_l42cm")
+texture_filter = 3
+offset_right = 120.0
+offset_bottom = 72.0
+scale = Vector2(10, 10)
+texture = ExtResource("2_m5shw")
 
 [node name="Titre" type="Label" parent="." unique_id=1928740058]
 offset_left = 466.0
@@ -38,21 +39,51 @@ text = "Afterparty
 label_settings = SubResource("LabelSettings_1f0px")
 horizontal_alignment = 1
 
-[node name="Start" type="Button" parent="." unique_id=1269848875]
-offset_left = 528.0
-offset_top = 296.0
-offset_right = 672.0
-offset_bottom = 386.0
+[node name="Start" type="TextureButton" parent="." unique_id=186769416]
+texture_filter = 1
+offset_left = 488.0
+offset_top = 360.0
+offset_right = 513.0
+offset_bottom = 367.14285
+scale = Vector2(8.96, 8.96)
 theme = SubResource("Theme_t63bs")
-text = "Start"
+texture_normal = ExtResource("3_02m2c")
+stretch_mode = 0
 
-[node name="Quit" type="Button" parent="." unique_id=486680839]
-offset_left = 501.0
-offset_top = 441.0
-offset_right = 701.0
-offset_bottom = 545.0
-theme = SubResource("Theme_1f0px")
-text = "Quit"
+[node name="Label" type="Label" parent="Start" unique_id=103179512]
+texture_filter = 3
+layout_mode = 0
+offset_left = 0.8928528
+offset_top = -0.33485413
+offset_right = 155.65472
+offset_bottom = 50.617508
+scale = Vector2(0.15, 0.15)
+text = "Jouer"
+label_settings = SubResource("LabelSettings_m5shw")
+horizontal_alignment = 1
+
+[node name="Quit" type="TextureButton" parent="." unique_id=473171258]
+texture_filter = 1
+offset_left = 488.0
+offset_top = 440.0
+offset_right = 513.0
+offset_bottom = 447.14285
+scale = Vector2(8.96, 8.96)
+theme = SubResource("Theme_t63bs")
+texture_normal = ExtResource("3_02m2c")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Quit" unique_id=1050941769]
+texture_filter = 3
+layout_mode = 0
+offset_left = 0.8928528
+offset_top = -0.33485413
+offset_right = 155.65472
+offset_bottom = 50.617508
+scale = Vector2(0.15, 0.15)
+text = "Quitter"
+label_settings = SubResource("LabelSettings_m5shw")
+horizontal_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=967263729]
 stream = ExtResource("2_t63bs")
