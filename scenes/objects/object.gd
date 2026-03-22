@@ -5,6 +5,8 @@ extends CharacterBody2D
 const DROP_FORCE = 200
 const FLOOR_FRICTION = 400.0
 
+const PICKUP_DISTANCE = 50
+
 var _original_parent: Node
 var _grabbed_by: CharacterBody2D = null # Player grabbing the object
 var _pickup_distance = 30
@@ -16,7 +18,7 @@ var _pickup_height = 10
 		if has_node("Sprite2D"):
 			$Sprite2D.texture = value
 			_pickup_height = $Sprite2D.texture.get_width()
-			_pickup_distance = $Sprite2D.texture.get_width() * 1.5
+			_pickup_distance = PICKUP_DISTANCE
 			print("Set pickup distance of ", _pickup_distance, "for tex ", $Sprite2D.texture)
 			
 @export_range(0.1, 2.0, 0.1, "Masse") var masse := 0.1
