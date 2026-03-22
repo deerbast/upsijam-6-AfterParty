@@ -241,9 +241,9 @@ text_overrun_behavior = 1
 
 [node name="Label" type="Label" parent="." unique_id=763562941]
 layout_mode = 0
-offset_left = 496.0
+offset_left = 505.0
 offset_top = 104.0
-offset_right = 684.0
+offset_right = 693.0
 offset_bottom = 153.0
 text = "MyPhone 8"
 label_settings = SubResource("LabelSettings_1aovg")
@@ -255,7 +255,7 @@ self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 507.0
 offset_top = 104.0
-offset_right = 695.0
+offset_right = 696.0
 offset_bottom = 153.0
 text = "Maman"
 label_settings = SubResource("LabelSettings_1aovg")

@@ -24,7 +24,6 @@ Global="*res://scenes/global.gd"
 window/size/viewport_width=1200
 window/size/viewport_height=720
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"
 
 [global_group]
@@ -81,3 +80,4 @@ textures/canvas_textures/default_texture_filter=3
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
