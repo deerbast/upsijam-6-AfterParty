@@ -124,7 +124,7 @@ offset_top = 583.0
 offset_right = 848.0
 offset_bottom = 759.0
 text = "Devs: Bastian & Xavier
-Design: Simon Music: Loïc
+Assets: Simon, Sons: Loïc
 UPSI JAM 2026"
 label_settings = SubResource("LabelSettings_e0o6y")
 horizontal_alignment = 1
