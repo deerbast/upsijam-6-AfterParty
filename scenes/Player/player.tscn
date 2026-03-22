@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://1iiys8hjmlil" path="res://assets/sprites/16x32 Run.png" id="6_fm80t"]
 [ext_resource type="AudioStream" uid="uid://c8iwxdmmb25i1" path="res://assets/music/walking.mp3" id="7_0owmy"]
 [ext_resource type="Texture2D" uid="uid://6y6hto3alth" path="res://assets/sprites/16x32 Run_with_obj.png" id="7_gx1jg"]
-[ext_resource type="AudioStream" uid="uid://wn0u4c6wo7d1" path="res://assets/music/dash.mp3" id="7_qek5x"]
+[ext_resource type="AudioStream" uid="uid://dobpjov2lp8es" path="res://assets/music/dash.wav" id="9_h17s1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ugbui"]
 atlas = ExtResource("3_5gtgg")
@@ -469,7 +469,7 @@ position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_0owmy")
 
 [node name="Dash" type="AudioStreamPlayer" parent="." unique_id=98758452]
-stream = ExtResource("7_qek5x")
+stream = ExtResource("9_h17s1")
 volume_db = -12.0
 
 [node name="Walking" type="AudioStreamPlayer" parent="." unique_id=1701847229]
