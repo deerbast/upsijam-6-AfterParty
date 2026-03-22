@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d2i0pue6vih2b"]
 
 [ext_resource type="Script" uid="uid://ceyd4nd0fa2ij" path="res://scenes/ecran_titre/ecran_titre.gd" id="1_1f0px"]
-[ext_resource type="Texture2D" path="res://assets/phone.tres" id="2_l42cm"]
+[ext_resource type="Texture2D" uid="uid://dx1facxn858dj" path="res://assets/phone.png" id="2_l42cm"]
 [ext_resource type="AudioStream" uid="uid://bl1cq57yu7bxb" path="res://assets/music/title_music.mp3str" id="2_t63bs"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1f0px"]
@@ -21,10 +21,10 @@ metadata/_edit_vertical_guides_ = [600.0, 1200.0]
 metadata/_edit_horizontal_guides_ = [360.0, 720.0]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1645548388]
-offset_left = 423.99997
-offset_top = 7.9999995
-offset_right = 1843.0
-offset_bottom = 2804.0
+offset_left = 428.99997
+offset_top = 6.999999
+offset_right = 1848.0
+offset_bottom = 2803.0
 scale = Vector2(0.24, 0.24)
 texture = ExtResource("2_l42cm")
 
@@ -47,9 +47,9 @@ theme = SubResource("Theme_t63bs")
 text = "Start"
 
 [node name="Quit" type="Button" parent="." unique_id=486680839]
-offset_left = 504.0
+offset_left = 501.0
 offset_top = 441.0
-offset_right = 704.0
+offset_right = 701.0
 offset_bottom = 545.0
 theme = SubResource("Theme_1f0px")
 text = "Quit"

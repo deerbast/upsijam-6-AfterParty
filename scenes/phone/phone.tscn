@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c1ldoduhvxwkl"]
 
 [ext_resource type="Script" uid="uid://bg4lpq4xre4vl" path="res://scenes/phone/phone.gd" id="1_btltj"]
-[ext_resource type="Texture2D" path="res://assets/phone.tres" id="1_kby2p"]
+[ext_resource type="Texture2D" uid="uid://dx1facxn858dj" path="res://assets/phone.png" id="2_rlgmi"]
 [ext_resource type="AudioStream" uid="uid://mkdgs1x2r6f0" path="res://assets/music/mom.mp3" id="3_1aovg"]
 [ext_resource type="AudioStream" uid="uid://c2fnelec6438e" path="res://assets/music/ringtone.mp3" id="3_rlgmi"]
 
@@ -220,24 +220,25 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_btltj")
+metadata/_edit_vertical_guides_ = [600.0]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1160076659]
 libraries/ = SubResource("AnimationLibrary_btltj")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=420158233]
 layout_mode = 0
-offset_left = 423.99997
+offset_left = 429.99997
 offset_top = 7.9999995
-offset_right = 1843.0
+offset_right = 1849.0
 offset_bottom = 2804.0
 scale = Vector2(0.24, 0.24)
-texture = ExtResource("1_kby2p")
+texture = ExtResource("2_rlgmi")
 
 [node name="Label2" type="Label" parent="." unique_id=294928989]
 layout_mode = 0
-offset_left = 512.0
+offset_left = 530.0
 offset_top = 254.0
-offset_right = 649.0
+offset_right = 667.0
 offset_bottom = 353.0
 text = "Maman vous
 appelle
@@ -269,9 +270,9 @@ vertical_alignment = 1
 [node name="Label3" type="Label" parent="." unique_id=1043039178]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 496.0
+offset_left = 507.0
 offset_top = 104.0
-offset_right = 684.0
+offset_right = 695.0
 offset_bottom = 153.0
 text = "Maman"
 label_settings = SubResource("LabelSettings_1aovg")
