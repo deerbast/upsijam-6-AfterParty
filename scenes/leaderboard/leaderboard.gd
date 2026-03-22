@@ -17,7 +17,7 @@ func update_leaderboard() -> void:
 	var sw_result: Dictionary = await SilentWolf.Scores.get_scores(0).sw_get_scores_complete
 	var leaderboard = "[table=2][cell expand][center]  Username  [/center][/cell][cell][center] Score [/center][/cell]"
 	for score in sw_result.scores:
-		leaderboard += "[cell expand][center] %s [/center][/cell][cell][center] %s [/center][/cell]" % [score.player_name, score.score]
+		leaderboard += "[cell expand][center] %s [/center][/cell][cell][center] %s%% [/center][/cell]" % [score.player_name, score.score]
 	leaderboard += "[/table]"
 	$RichTextLabel.text = leaderboard
 	
