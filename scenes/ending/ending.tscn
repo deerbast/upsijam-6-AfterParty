@@ -105,9 +105,9 @@ label_settings = SubResource("LabelSettings_iy4oq")
 [node name="Score" type="Label" parent="." unique_id=132731177]
 layout_mode = 0
 offset_left = 173.0
-offset_top = 256.0
+offset_top = 236.0
 offset_right = 1028.0
-offset_bottom = 311.0
+offset_bottom = 291.0
 text = "Tu as détruit 100% des ressources possibles."
 label_settings = SubResource("LabelSettings_uhqb6")
 horizontal_alignment = 1
@@ -141,18 +141,27 @@ parameters/looping = true
 [node name="Button" type="Button" parent="." unique_id=704796876]
 layout_mode = 0
 offset_left = 496.0
-offset_top = 344.0
+offset_top = 297.0
 offset_right = 704.0
-offset_bottom = 424.0
+offset_bottom = 377.0
 theme = SubResource("Theme_e0o6y")
 text = "Replay ?"
+
+[node name="Button2" type="Button" parent="." unique_id=361318606]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 392.0
+offset_right = 749.0
+offset_bottom = 472.0
+theme = SubResource("Theme_e0o6y")
+text = "Leaderboard"
 
 [node name="Credits" type="Label" parent="." unique_id=706375658]
 layout_mode = 0
 offset_left = 352.0
-offset_top = 464.0
+offset_top = 470.0
 offset_right = 848.0
-offset_bottom = 640.0
+offset_bottom = 646.0
 text = "Credits:
 Devs: Bastian & Xavier
 Design: Simon Music: Loïc"
