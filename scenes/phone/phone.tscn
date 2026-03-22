@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c1ldoduhvxwkl"]
 
 [ext_resource type="Script" uid="uid://bg4lpq4xre4vl" path="res://scenes/phone/phone.gd" id="1_btltj"]
-[ext_resource type="Texture2D" uid="uid://caf7ro7jwaxlb" path="res://assets/phone.tres" id="1_kby2p"]
+[ext_resource type="Texture2D" path="res://assets/phone.tres" id="1_kby2p"]
 [ext_resource type="AudioStream" uid="uid://mkdgs1x2r6f0" path="res://assets/music/mom.mp3" id="3_1aovg"]
 [ext_resource type="AudioStream" uid="uid://c2fnelec6438e" path="res://assets/music/ringtone.mp3" id="3_rlgmi"]
 

@@ -149,7 +149,7 @@ masse = 0.6
 [node name="Cake" parent="objects" unique_id=580678175 groups=["Object"] instance=ExtResource("5_o4ivr")]
 z_index = 1
 texture = ExtResource("9_dmt4p")
-masse = 1.4000000000000001
+masse = 1.4
 
 [node name="Can" parent="objects" unique_id=15602608 groups=["Object"] instance=ExtResource("3_0bmqc")]
 z_index = 1
