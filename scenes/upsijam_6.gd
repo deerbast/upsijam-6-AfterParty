@@ -29,7 +29,6 @@ func _process(_delta: float) -> void:
 func _on_decompte_animation_finished(_anim_name: StringName) -> void:
 	#Game has started, player can move
 	$EndOfTime.start(30)
-	Global.send = false
 	$AudioStreamPlayer.play(0)
 	#pass
 
