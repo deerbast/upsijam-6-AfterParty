@@ -12,6 +12,9 @@ default_font_size = 31
 [sub_resource type="Theme" id="Theme_3ilyb"]
 default_font_size = 31
 
+[sub_resource type="Theme" id="Theme_b6xng"]
+default_font_size = 82
+
 [sub_resource type="Theme" id="Theme_fycm3"]
 default_font_size = 57
 
@@ -63,10 +66,31 @@ offset_bottom = 696.0
 theme = SubResource("Theme_3ilyb")
 text = "Envoyer score"
 
+[node name="Refresh" type="Button" parent="." unique_id=876498055]
+layout_mode = 0
+offset_left = 1016.0
+offset_top = 16.0
+offset_right = 1136.0
+offset_bottom = 137.0
+theme = SubResource("Theme_b6xng")
+text = "⟳"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1667625620]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 148.0
+offset_right = 1152.0
+offset_bottom = 224.0
+theme = SubResource("Theme_fycm3")
+bbcode_enabled = true
+text = "[table=2][cell expand][center]  Username  [/center][/cell][cell][center] Score [/center][/cell][/table]"
+scroll_active = false
+horizontal_alignment = 1
+
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=2073189125]
 layout_mode = 0
 offset_left = 64.0
-offset_top = 128.0
+offset_top = 224.0
 offset_right = 1152.0
 offset_bottom = 600.0
 theme = SubResource("Theme_fycm3")
@@ -83,4 +107,5 @@ theme = SubResource("Theme_q1831")
 text = "Rejouer"
 
 [connection signal="pressed" from="SendToLeaderboard" to="." method="_on_send_to_leaderboard_pressed"]
+[connection signal="pressed" from="Refresh" to="." method="_on_refresh_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
