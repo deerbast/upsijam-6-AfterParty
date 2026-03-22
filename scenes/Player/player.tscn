@@ -4,34 +4,35 @@
 [ext_resource type="Script" uid="uid://dk7jscs72jd1y" path="res://scenes/player/dash_timer.gd" id="2_g2els"]
 [ext_resource type="Texture2D" uid="uid://bdgq1ynpyinbp" path="res://assets/sprites/16x32 Dash.png" id="3_5gtgg"]
 [ext_resource type="Texture2D" uid="uid://bxh3xpjmi2l87" path="res://assets/sprites/16x32 Idle.png" id="4_h17s1"]
+[ext_resource type="Texture2D" uid="uid://47fcyo156sbm" path="res://assets/sprites/16x32 Dash_with_obj.png" id="4_je7p5"]
 [ext_resource type="Texture2D" uid="uid://clvovc82ekt83" path="res://assets/sprites/16x32 Idle_with_obj.png" id="5_je7p5"]
 [ext_resource type="Texture2D" uid="uid://1iiys8hjmlil" path="res://assets/sprites/16x32 Run.png" id="6_fm80t"]
-[ext_resource type="AudioStream" uid="uid://c8iwxdmmb25i1" path="res://assets/walking.mp3" id="7_0owmy"]
+[ext_resource type="AudioStream" uid="uid://c8iwxdmmb25i1" path="res://assets/music/walking.mp3" id="7_0owmy"]
 [ext_resource type="Texture2D" uid="uid://6y6hto3alth" path="res://assets/sprites/16x32 Run_with_obj.png" id="7_gx1jg"]
-[ext_resource type="AudioStream" uid="uid://wn0u4c6wo7d1" path="res://assets/dash.mp3" id="7_qek5x"]
+[ext_resource type="AudioStream" uid="uid://wn0u4c6wo7d1" path="res://assets/music/dash.mp3" id="7_qek5x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ugbui"]
 atlas = ExtResource("3_5gtgg")
 region = Rect2(0, 32, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fcs02"]
-atlas = ExtResource("3_5gtgg")
+[sub_resource type="AtlasTexture" id="AtlasTexture_fm80t"]
+atlas = ExtResource("4_je7p5")
 region = Rect2(0, 32, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_myrg7"]
 atlas = ExtResource("3_5gtgg")
 region = Rect2(0, 64, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kvlxm"]
-atlas = ExtResource("3_5gtgg")
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx1jg"]
+atlas = ExtResource("4_je7p5")
 region = Rect2(0, 64, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uf5tr"]
 atlas = ExtResource("3_5gtgg")
 region = Rect2(0, 0, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lgqa7"]
-atlas = ExtResource("3_5gtgg")
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcs02"]
+atlas = ExtResource("4_je7p5")
 region = Rect2(0, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ydkj"]
@@ -222,7 +223,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fcs02")
+"texture": SubResource("AtlasTexture_fm80t")
 }],
 "loop": true,
 "name": &"dash-front-obj",
@@ -238,7 +239,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kvlxm")
+"texture": SubResource("AtlasTexture_gx1jg")
 }],
 "loop": true,
 "name": &"dash-rear-obj",
@@ -254,7 +255,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lgqa7")
+"texture": SubResource("AtlasTexture_fcs02")
 }],
 "loop": true,
 "name": &"dash-right-obj",
@@ -450,7 +451,7 @@ script = ExtResource("2_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1006457628]
 sprite_frames = SubResource("SpriteFrames_yj68g")
-animation = &"run-right-obj"
+animation = &"dash-right-obj"
 
 [node name="BlockTimer" type="Timer" parent="." unique_id=783402733]
 
