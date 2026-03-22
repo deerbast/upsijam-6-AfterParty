@@ -4,7 +4,7 @@ signal on_dash_finished
 signal on_dash_ready
 
 const DASH_TIMER = 0.2
-const DASH_COOLDOWN = 2.0
+const DASH_COOLDOWN = 0.2
 
 var can_dash: bool = true
 

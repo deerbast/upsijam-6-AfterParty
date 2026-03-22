@@ -3,8 +3,8 @@ extends CharacterBody2D
 signal player_moved
 
 # Player constants
-const SPEED_RUN = 80
-const SPEED_DASH = 250
+const SPEED_RUN = 130
+const SPEED_DASH = 300
 const PUSH_FORCE = 0.5
 
 # Runtime states
