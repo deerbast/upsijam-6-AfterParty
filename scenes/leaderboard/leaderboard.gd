@@ -11,6 +11,7 @@ func _on_send_to_leaderboard_pressed() -> void:
 		update_leaderboard()
 		
 func _ready() -> void:
+	$AudioStreamPlayer.play(0)
 	await get_tree().create_timer(1).timeout
 	update_leaderboard()
 	
@@ -27,3 +28,6 @@ func _on_refresh_pressed() -> void:
 
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/upsijam_6.tscn")
+
+func _on_audio_stream_player_finished() -> void:
+	$AudioStreamPlayer.play(0)

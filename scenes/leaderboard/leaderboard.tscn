@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cmohosexe1k1a" path="res://assets/background.png" id="2_q1831"]
 [ext_resource type="Texture2D" uid="uid://d3fl87abs40vi" path="res://assets/refresh.png" id="3_1epml"]
 [ext_resource type="Texture2D" uid="uid://c3v18y08svpjd" path="res://assets/refresh_pressed.png" id="4_x3ryb"]
+[ext_resource type="AudioStream" uid="uid://jhdh8ixeq4jr" path="res://assets/music/ending_cut.mp3" id="5_frobq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0fjt0"]
 font_size = 107
@@ -110,6 +111,10 @@ offset_bottom = 697.0
 theme = SubResource("Theme_q1831")
 text = "Rejouer"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1837382698]
+stream = ExtResource("5_frobq")
+
 [connection signal="pressed" from="SendToLeaderboard" to="." method="_on_send_to_leaderboard_pressed"]
 [connection signal="pressed" from="Refresh" to="." method="_on_refresh_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
