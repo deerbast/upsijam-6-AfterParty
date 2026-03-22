@@ -129,6 +129,7 @@ radius = 17.0
 height = 42.0
 
 [node name="FireZone" type="Area2D" unique_id=39517027]
+z_index = 5
 position = Vector2(0, -28)
 script = ExtResource("1_t5u7e")
 

@@ -14,6 +14,8 @@ func _ready() -> void:
 	$EndOfTime.start(30)
 	$EndOfTime.stop() 
 	# Get values for every objects in group for ending screen
+	Global.score = 0
+	Global.total_possible_score = 0
 	for obj in get_node("objects").get_children():
 		if obj.is_in_group("Object"):
 			Global.total_possible_score += (obj.masse + 1) * 3 #Modifier 
