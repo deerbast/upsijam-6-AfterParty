@@ -60,11 +60,6 @@ offset_right = 1152.0
 offset_bottom = 600.0
 theme = SubResource("Theme_fycm3")
 bbcode_enabled = true
-text = "[table=2]
-[cell expand][center]Slot Width/Height[/center][/cell][cell][right]2/1[/right][/cell]
-[cell expand][left]Family[/left][/cell][cell][right]Makarov[/right][/cell]
-[cell expand][left]TypeWeapon[/left][/cell][cell][right]Pistol[/right][/cell]
-[/table]"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="SendToLeaderboard" to="." method="_on_send_to_leaderboard_pressed"]
