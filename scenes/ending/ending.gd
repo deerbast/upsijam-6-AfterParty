@@ -3,7 +3,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var score = "%.2f" % (Global.score/Global.total_possible_score * 100.0)
-	var text = "Tu as détruit {nbr}% des resources possibles."
+	var text = "Seulement {nbr}% du jardin nettoyé."
 	$Score.text = text.format({"nbr" : str(score)})
 	$AnimationPlayer.play("new_animation")
 
