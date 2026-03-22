@@ -138,27 +138,31 @@ masse = 0.5
 
 [node name="Ball" parent="objects" unique_id=1129320847 groups=["Object"] instance=ExtResource("3_0bmqc")]
 z_index = 1
+position = Vector2(784, 312)
 texture = ExtResource("7_7rl7i")
 masse = 0.6
 
 [node name="Ball2" parent="objects" unique_id=1941880958 groups=["Object"] instance=ExtResource("3_0bmqc")]
 z_index = 1
+position = Vector2(680, 408)
 texture = ExtResource("7_7rl7i")
 masse = 0.6
 
 [node name="Cake" parent="objects" unique_id=580678175 groups=["Object"] instance=ExtResource("5_o4ivr")]
 z_index = 1
+position = Vector2(520, 288)
 texture = ExtResource("9_dmt4p")
 masse = 1.4
 
 [node name="Can" parent="objects" unique_id=15602608 groups=["Object"] instance=ExtResource("3_0bmqc")]
 z_index = 1
+position = Vector2(528, 384)
 texture = ExtResource("10_oewny")
 masse = 0.6
 
 [node name="Flamingo" parent="objects" unique_id=1250579242 groups=["Object"] instance=ExtResource("5_o4ivr")]
 z_index = 1
-position = Vector2(360, 224)
+position = Vector2(656, 312)
 texture = ExtResource("11_oo272")
 masse = 0.5
 
@@ -179,6 +183,10 @@ position_smoothing_enabled = true
 
 [node name="Label4" type="Label" parent="Tuto" unique_id=1269388211]
 texture_filter = 1
+offset_left = 336.0
+offset_top = 616.0
+offset_right = 642.0
+offset_bottom = 647.0
 scale = Vector2(0.7, 0.7)
 text = "Vite ! Je dois tout jeter au feu"
 label_settings = SubResource("LabelSettings_0q7t8")
