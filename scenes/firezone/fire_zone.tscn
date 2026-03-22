@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://gx7l1ryxvu3u" path="res://scenes/firezone/fire_zone.gd" id="1_t5u7e"]
 [ext_resource type="Texture2D" uid="uid://rmx0f4pgiyg5" path="res://assets/sprites/32x64 fire_idle.png" id="2_8nw2a"]
+[ext_resource type="AudioStream" uid="uid://cr5icx3acjm1g" path="res://assets/music/burn.mp3" id="3_jlnk6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jlnk6"]
 atlas = ExtResource("2_8nw2a")
@@ -51,5 +52,8 @@ sprite_frames = SubResource("SpriteFrames_gx5wo")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1794998598]
 position = Vector2(0, 17.5)
 shape = SubResource("RectangleShape2D_8nw2a")
+
+[node name="Burn" type="AudioStreamPlayer" parent="." unique_id=1924810951]
+stream = ExtResource("3_jlnk6")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
