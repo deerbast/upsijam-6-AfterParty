@@ -21,6 +21,7 @@ var _pickup_height = 10
 			print("Set pickup distance of ", _pickup_distance, "for tex ", $Sprite2D.texture)
 			
 @export_range(0.1, 2.0, 0.1, "Masse") var masse := 0.1
+@export var z_correction: int = 0
 
 @onready var collider = $Collider
 
@@ -65,7 +66,8 @@ func player_grab_me(player: CharacterBody2D):
 	player.add_collision_exception_with(self)
 	# Move object on top of grabber
 	velocity = Vector2.ZERO
-	create_tween().tween_property(self, "position", Vector2(0, -_pickup_height), 0.1)
+	var target = Vector2(0, -_pickup_height + z_correction)
+	create_tween().tween_property(self, "position", target, 0.1)
 	
 func player_drop_me(player: CharacterBody2D):
 	print(player, " drops ", self)

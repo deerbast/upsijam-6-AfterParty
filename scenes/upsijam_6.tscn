@@ -147,6 +147,7 @@ z_index = 1
 position = Vector2(520, 288)
 texture = ExtResource("9_dmt4p")
 masse = 1.4
+z_correction = 8
 
 [node name="Can" parent="objects" unique_id=15602608 groups=["Object"] instance=ExtResource("3_0bmqc")]
 z_index = 1
@@ -159,12 +160,14 @@ z_index = 1
 position = Vector2(656, 312)
 texture = ExtResource("11_oo272")
 masse = 0.5
+z_correction = 9
 
 [node name="Pizza" parent="objects" unique_id=907379339 groups=["Object"] instance=ExtResource("5_o4ivr")]
 z_index = 1
 position = Vector2(288, 232)
 texture = ExtResource("12_y3hn5")
 masse = 1.2000000000000002
+z_correction = 10
 
 [node name="Player" parent="." unique_id=2085354336 instance=ExtResource("2_qi026")]
 position = Vector2(440, 527)
