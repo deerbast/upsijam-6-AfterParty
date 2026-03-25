@@ -9,6 +9,7 @@ func _ready() -> void:
 	$EndOfTime.stop() 
 	# Get values for every objects in group for ending screen
 	Global.score = 0
+	Global.send = false
 	Global.total_possible_score = 0
 	for obj in get_node("objects").get_children():
 		if obj.is_in_group("Object"):
