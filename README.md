@@ -2,6 +2,8 @@
 
 Play the game online > [here](https://petitbiscuits.itch.io/after-party) < on itch.io.
 
+![alt text](screenshots/ingame.png)
+
 ---
 
 **Burn with fire...**
@@ -31,3 +33,10 @@ How far will you go to erase the evidence?
 ---
 
 We created this game as a team of four in 42 hours during the Upsijam 6.0.
+
+### Credits
+
+Devs: Bastian & Xavier
+Assets: Simon, Music: Loïc
+
+Leaderboard addon: https://silentwolf.com
