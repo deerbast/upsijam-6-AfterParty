@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://ck33evc47xopi" path="res://assets/sprites/pizza_sprite.png" id="12_y3hn5"]
 [ext_resource type="Texture2D" uid="uid://cklxadwk0tesr" path="res://assets/pizza_sprite.png" id="13_4fnws"]
 [ext_resource type="Texture2D" uid="uid://c22ktjaqspabi" path="res://assets/shift.png" id="15_rqbsf"]
+[ext_resource type="Texture2D" uid="uid://bnowd83epjbo1" path="res://assets/32x16-space.png" id="17_t7wyg"]
 [ext_resource type="AudioStream" uid="uid://cnk8ccsp2aoxj" path="res://assets/music/countdown-1.wav" id="18_h5eqp"]
 [ext_resource type="AudioStream" uid="uid://dm1jmadbp5ycs" path="res://assets/music/countdown-2.wav" id="19_o5ioc"]
 
@@ -302,7 +303,7 @@ offset_bottom = 56.0
 
 [node name="Tuto" type="Node" parent="." unique_id=533077238]
 
-[node name="Label4" type="Label" parent="Tuto" unique_id=1269388211]
+[node name="LabelInstruction" type="Label" parent="Tuto" unique_id=1269388211]
 texture_filter = 1
 offset_left = 331.0
 offset_top = 616.0
@@ -312,7 +313,7 @@ scale = Vector2(0.7, 0.7)
 text = "Vite ! Il faut TOUT jeter au feu"
 label_settings = SubResource("LabelSettings_0q7t8")
 
-[node name="TextureRect" type="TextureRect" parent="Tuto" unique_id=57056233]
+[node name="TextureMovements" type="TextureRect" parent="Tuto" unique_id=57056233]
 offset_left = 245.0
 offset_top = 491.0
 offset_right = 1269.0
@@ -320,7 +321,7 @@ offset_bottom = 1515.0
 scale = Vector2(0.03, 0.03)
 texture = SubResource("CompressedTexture2D_xyyut")
 
-[node name="Label" type="Label" parent="Tuto" unique_id=1326690260]
+[node name="LabelMovements" type="Label" parent="Tuto" unique_id=1326690260]
 texture_repeat = 1
 offset_left = 279.0
 offset_top = 500.0
@@ -330,7 +331,7 @@ scale = Vector2(0.46, 0.46)
 text = "Mouvements"
 label_settings = SubResource("LabelSettings_xyyut")
 
-[node name="TextureRect2" type="TextureRect" parent="Tuto" unique_id=1541371427]
+[node name="TextureTakeThrow" type="TextureRect" parent="Tuto" unique_id=1541371427]
 offset_left = 243.0
 offset_top = 522.0
 offset_right = 1267.0
@@ -338,7 +339,7 @@ offset_bottom = 1546.0
 scale = Vector2(0.03, 0.03)
 texture = ExtResource("7_o4ivr")
 
-[node name="Label3" type="Label" parent="Tuto" unique_id=2041037714]
+[node name="LabelTakeThrow" type="Label" parent="Tuto" unique_id=2041037714]
 texture_repeat = 1
 offset_left = 278.0
 offset_top = 537.0
@@ -348,15 +349,23 @@ scale = Vector2(0.46, 0.46)
 text = "Prendre/Jeter"
 label_settings = SubResource("LabelSettings_xyyut")
 
-[node name="TextureRect3" type="TextureRect" parent="Tuto" unique_id=2133483134]
+[node name="TextureShift" type="TextureRect" parent="Tuto" unique_id=2133483134]
 offset_left = 245.0
-offset_top = 566.0
+offset_top = 560.0
 offset_right = 1311.6641
-offset_bottom = 1099.332
+offset_bottom = 1093.332
 scale = Vector2(0.03, 0.03)
 texture = ExtResource("15_rqbsf")
 
-[node name="Label5" type="Label" parent="Tuto" unique_id=84444735]
+[node name="TextureSpace" type="TextureRect" parent="Tuto" unique_id=780598172]
+offset_left = 245.0
+offset_top = 572.0
+offset_right = 1311.6641
+offset_bottom = 1105.332
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("17_t7wyg")
+
+[node name="LabelDash" type="Label" parent="Tuto" unique_id=84444735]
 texture_repeat = 1
 offset_left = 279.0
 offset_top = 567.99994

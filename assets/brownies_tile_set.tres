@@ -27,6 +27,9 @@ texture = ExtResource("1_kd4v7")
 1:12/animation_frame_2/duration = 1.0
 1:12/0 = 0
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kd4v7"]
+polygon = PackedVector2Array(-12.235453, -4.373314, -9.680258, -13.218221, -3.8819313, -21.571743, 2.2112274, -22.751064, 7.3993874, -21.327646, 11.751968, -12.622485, 14.711723, 3.5691166, 3.5691147, 12.100175, 3.220909, 19.238407, 6.702976, 22.546368, -2.1762924, 23.590988, -6.3547688, 21.153542, -2.1762924, 17.14917, -2.8727036, 11.403762, -14.189415, 6.354768)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xyyut"]
 texture = ExtResource("2_np582")
 0:0/0 = 0
@@ -62,8 +65,10 @@ texture = ExtResource("2_np582")
 4:2/0 = 0
 0:3/size_in_atlas = Vector2i(2, 3)
 0:3/0 = 0
+0:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_kd4v7")
 
 [resource]
+occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ncu3o")
 sources/1 = SubResource("TileSetAtlasSource_xyyut")
