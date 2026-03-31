@@ -4,14 +4,15 @@ signal player_moved
 
 # Player constants
 const SPEED_RUN = 130
-const SPEED_DASH = 300
-const PUSH_FORCE = 0.5
+const SPEED_DASH = 375
+const PUSH_FORCE = 0.5 # Force used to push objects on ground
 
 # Runtime states
 var speed = SPEED_RUN
 var push_slow_factor = 1.0
 var dashing: bool = false
 var grabbed_object: MovableObject = null
+var current_direction: Vector2 = Vector2(0, 0)
 
 # External refs
 @onready var sprite = $AnimatedSprite2D
@@ -20,8 +21,9 @@ var grabbed_object: MovableObject = null
 @onready var block_timer = $BlockTimer
 
 func _physics_process(_delta: float) -> void:
-	var direction := Input.get_vector("Left", "Right", "Up", "Down")
-	velocity = direction * speed * _speed_modifier()
+	if not dashing:
+		current_direction = Input.get_vector("Left", "Right", "Up", "Down")
+	velocity = current_direction * speed * _speed_modifier()
 	
 	move_and_slide()
 	update_push_slow_factor(_delta)

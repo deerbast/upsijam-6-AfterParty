@@ -3,8 +3,8 @@ extends Timer
 signal on_dash_finished
 signal on_dash_ready
 
-const DASH_TIMER = 0.2
-const DASH_COOLDOWN = 0.2
+const DASH_TIMER = 0.15
+const DASH_COOLDOWN = 0.35
 
 var can_dash: bool = true
 
