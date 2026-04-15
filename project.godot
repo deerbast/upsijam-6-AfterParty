@@ -75,6 +75,10 @@ Restart={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://resources/translations.de.translation", "res://resources/translations.en.translation", "res://resources/translations.fr.translation")
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

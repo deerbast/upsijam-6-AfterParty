@@ -17,6 +17,10 @@ default_font_size = 46
 line_spacing = 3.01
 font_size = 32
 
+[sub_resource type="LabelSettings" id="LabelSettings_02m2c"]
+line_spacing = 3.01
+font_size = 29
+
 [sub_resource type="Animation" id="Animation_m5shw"]
 length = 0.001
 tracks/0/type = "value"
@@ -70,6 +74,7 @@ offset_right = 120.0
 offset_bottom = 72.0
 scale = Vector2(10, 10)
 texture = ExtResource("2_m5shw")
+metadata/_edit_use_anchors_ = true
 
 [node name="Titre" type="Label" parent="." unique_id=1928740058]
 offset_left = 466.0
@@ -79,18 +84,20 @@ offset_bottom = 281.0
 text = "Afterparty"
 label_settings = SubResource("LabelSettings_1f0px")
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Start" type="TextureButton" parent="." unique_id=186769416]
 texture_filter = 1
 offset_left = 488.0
-offset_top = 360.0
+offset_top = 296.0
 offset_right = 513.0
-offset_bottom = 367.14285
+offset_bottom = 303.14285
 scale = Vector2(8.96, 8.96)
 theme = SubResource("Theme_t63bs")
 texture_normal = ExtResource("3_02m2c")
 texture_hover = ExtResource("4_02m2c")
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Start" unique_id=103179512]
 texture_filter = 3
@@ -100,16 +107,40 @@ offset_top = -0.33485413
 offset_right = 155.65472
 offset_bottom = 50.617508
 scale = Vector2(0.15, 0.15)
-text = "Jouer"
+text = "TITRE_PLAY"
 label_settings = SubResource("LabelSettings_m5shw")
+horizontal_alignment = 1
+
+[node name="Options" type="TextureButton" parent="." unique_id=501416086]
+texture_filter = 1
+offset_left = 488.0
+offset_top = 377.0
+offset_right = 513.0
+offset_bottom = 384.14285
+scale = Vector2(8.96, 8.96)
+theme = SubResource("Theme_t63bs")
+texture_normal = ExtResource("3_02m2c")
+texture_hover = ExtResource("4_02m2c")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Options" unique_id=8983199]
+texture_filter = 3
+layout_mode = 0
+offset_left = 0.8928562
+offset_top = -0.11160579
+offset_right = 155.65472
+offset_bottom = 50.840755
+scale = Vector2(0.15, 0.15)
+text = "TITRE_OPTION"
+label_settings = SubResource("LabelSettings_02m2c")
 horizontal_alignment = 1
 
 [node name="Quit" type="TextureButton" parent="." unique_id=473171258]
 texture_filter = 1
 offset_left = 488.0
-offset_top = 440.0
+offset_top = 457.0
 offset_right = 513.0
-offset_bottom = 447.14285
+offset_bottom = 464.14282
 scale = Vector2(8.96, 8.96)
 theme = SubResource("Theme_t63bs")
 texture_normal = ExtResource("3_02m2c")
@@ -124,7 +155,7 @@ offset_top = -0.33485413
 offset_right = 155.65472
 offset_bottom = 50.617508
 scale = Vector2(0.15, 0.15)
-text = "Quitter"
+text = "TITRE_QUIT"
 label_settings = SubResource("LabelSettings_m5shw")
 horizontal_alignment = 1
 
@@ -146,8 +177,9 @@ theme = SubResource("Theme_pd8b1")
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 11
-text = "Mettre le son !"
+text = "TITRE_SPLASH"
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

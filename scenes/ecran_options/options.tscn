@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://corn5qd323vww"]
+
+[ext_resource type="Script" uid="uid://dx4n1fl7jyw1t" path="res://scenes/ecran_options/options.gd" id="1_nkwea"]
+[ext_resource type="Texture2D" uid="uid://dn4dyaxajdqqn" path="res://assets/welcome_phone_with_gradient.png" id="1_sw17x"]
+[ext_resource type="Texture2D" uid="uid://3dp7g3lucakp" path="res://assets/16x32 phone_button.png" id="2_ow0sn"]
+[ext_resource type="Texture2D" uid="uid://634h1poggnk" path="res://assets/16x32 phone_button_pressed.png" id="3_nkwea"]
+[ext_resource type="Texture2D" uid="uid://hcgd0uaxgcne" path="res://scenes/ecran_options/flags.atlastex" id="5_nkwea"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_767ue"]
+font_size = 51
+
+[sub_resource type="Theme" id="Theme_1r8nd"]
+default_base_scale = 0.69
+default_font_size = 46
+
+[sub_resource type="LabelSettings" id="LabelSettings_nug1p"]
+line_spacing = 3.01
+font_size = 32
+
+[sub_resource type="Theme" id="Theme_ow0sn"]
+default_base_scale = 0.69
+default_font_size = 46
+
+[sub_resource type="LabelSettings" id="LabelSettings_nkwea"]
+line_spacing = 3.01
+font_size = 32
+
+[node name="Control" type="Control" unique_id=744080789]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nkwea")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1438074001]
+texture_filter = 3
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 72.0
+scale = Vector2(10, 10)
+texture = ExtResource("1_sw17x")
+metadata/_edit_use_anchors_ = true
+
+[node name="Titre" type="Label" parent="." unique_id=874438463]
+layout_mode = 0
+offset_left = 466.0
+offset_top = 138.0
+offset_right = 733.0
+offset_bottom = 281.0
+text = "Options"
+label_settings = SubResource("LabelSettings_767ue")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Start" type="TextureButton" parent="." unique_id=1435404055]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.026666667
+anchor_top = -0.06666667
+anchor_right = -0.026666667
+anchor_bottom = -0.06666667
+offset_left = 488.0
+offset_top = 296.0
+offset_right = 513.0
+offset_bottom = 303.14285
+scale = Vector2(8.96, 8.96)
+theme = SubResource("Theme_1r8nd")
+disabled = true
+texture_normal = ExtResource("2_ow0sn")
+texture_hover = ExtResource("3_nkwea")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Start" unique_id=935022273]
+texture_filter = 3
+layout_mode = 0
+offset_left = 0.8928528
+offset_top = -0.33485413
+offset_right = 155.65472
+offset_bottom = 50.617508
+scale = Vector2(0.15, 0.15)
+text = "OPTION_LANG"
+label_settings = SubResource("LabelSettings_nug1p")
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="." unique_id=2107111160]
+layout_mode = 0
+offset_left = 687.99994
+offset_top = 256.0
+offset_right = 719.99994
+offset_bottom = 276.0
+scale = Vector2(2.35, 2.35)
+
+[node name="TextureRect" type="TextureRect" parent="OptionButton" unique_id=1755302305]
+layout_mode = 0
+offset_left = 0.99
+offset_top = 2.42
+offset_right = 70.99
+offset_bottom = 72.42
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_nkwea")
+
+[node name="Quit" type="TextureButton" parent="." unique_id=141821764]
+texture_filter = 1
+layout_mode = 0
+offset_left = 488.0
+offset_top = 457.0
+offset_right = 513.0
+offset_bottom = 464.14282
+scale = Vector2(8.96, 8.96)
+theme = SubResource("Theme_ow0sn")
+texture_normal = ExtResource("2_ow0sn")
+texture_hover = ExtResource("3_nkwea")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Quit" unique_id=1450619909]
+texture_filter = 3
+layout_mode = 0
+offset_left = 0.8928528
+offset_top = -0.33485413
+offset_right = 155.65472
+offset_bottom = 50.617508
+scale = Vector2(0.15, 0.15)
+text = "RETOUR"
+label_settings = SubResource("LabelSettings_nkwea")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
